@@ -16,9 +16,14 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'Registro',
+      url: '/register',
       icon: 'list'
+    },
+    {
+      title: 'Seja um Parceiro',
+      url: '/register-barber',
+      icon: 'jet'
     }
   ];
 
