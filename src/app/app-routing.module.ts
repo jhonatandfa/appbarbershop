@@ -12,7 +12,8 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule' }
+  { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule' },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+
 ];
 
 @NgModule({

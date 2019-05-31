@@ -24,6 +24,11 @@ export class AppComponent {
       title: 'Seja um Parceiro',
       url: '/register-barber',
       icon: 'jet'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'jet'
     }
   ];
 
