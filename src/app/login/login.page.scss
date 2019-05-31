@@ -1,5 +1,15 @@
+ion-content{
+    --background: url("../../assets/fundo1.jpg") no-repeat center center / cover;; 
+}
+
+
+
 .login{
     width: 350px;
     margin: auto;
     margin-top: 10px;
+}
+
+.mgt{
+    margin-top: 150px;
 }

@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
     
    console.log(this.txtUser);
    if(this.txtUser == this.user.usuario && this.txtSenha == this.user.senha){
-     this.route.navigateByUrl('/register')
+     this.route.navigateByUrl('/home')
    //console.log("logado");
    }else{
     this.erro = "Usuário ou senha inválidos";
