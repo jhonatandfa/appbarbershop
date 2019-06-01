@@ -1,13 +1,14 @@
 <ion-content padding >
-  <ion-list class="mgt">
-    <ion-item >
-      <ion-label>Usuário</ion-label>
-      <ion-input id="opacity" type="text" autofocus [(ngModel)]="txtUser"></ion-input>
-    </ion-item>
-    <ion-item >
-      <ion-label>Senha</ion-label>
-      <ion-input id="opacity"  type="password" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item>   
+
+<ion-list class="mgt">
+  <ion-item >
+    <ion-label>Usuário</ion-label>
+    <ion-input id="opacity" type="text" autofocus [(ngModel)]="txtUser"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label>Senha</ion-label>
+    <ion-input id="opacity"   type="password" [(ngModel)]="txtSenha"></ion-input>
+  </ion-item>   
 </ion-list>
 <p class="small text-danger text-center">{{erro}}</p>
 <ion-button (click)="logar()" expand="block">Entrar</ion-button>

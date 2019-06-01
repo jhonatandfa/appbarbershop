@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 
 
@@ -18,11 +19,18 @@ export class LoginPage implements OnInit {
     senha: "123"
   }
   erro:string;
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    public menu: MenuController) { }
 
   ngOnInit() {
+    this.menu.enable(false);
     this.txtUser = "";
     this.txtSenha = "";
+  }
+
+  ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
   }
 
   

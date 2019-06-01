@@ -1,3 +1,40 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start" >
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
 <ion-content padding>
-  
+  <ion-list class="mgt">
+    <ion-item >
+      <ion-label>Nome:</ion-label>
+      <ion-input   type="text" autofocus [(ngModel)]="txtUser"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label>cpf:</ion-label>
+      <ion-input id="opacity"  type="text" [(ngModel)]="txtSenha"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-label>Email:</ion-label>
+      <ion-input id="opacity"  type="email" [(ngModel)]="txtSenha"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-label>Senha</ion-label>
+      <ion-input id="opacity"  type="password" [(ngModel)]="txtSenha"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-label>Confirmar senha:</ion-label>
+      <ion-input id="opacity"  type="password" [(ngModel)]="txtSenha"></ion-input>
+    </ion-item> 
+    <ion-item >
+      <ion-label>Senha</ion-label>
+      <ion-input id="opacity"  type="text" [(ngModel)]="txtSenha"></ion-input>
+    </ion-item>   
+</ion-list>
+<p class="small text-danger text-center">{{erro}}</p>
+<ion-button (click)="logar()" expand="block">Entrar</ion-button>
+
 </ion-content>
