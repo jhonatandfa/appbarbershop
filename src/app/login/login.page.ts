@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { MenuController, AlertController, LoadingController } from '@ionic/angular';
 
 
 
@@ -15,17 +15,17 @@ export class LoginPage implements OnInit {
   public txtSenha:string;
 
   private  user = {
-    usuario: 'root',
-    senha: "123"
+    login: '',
+    senha: ''
   }
   erro:string;
   constructor(private route: Router,
-    public menu: MenuController) { }
+    public menu: MenuController,
+    public alertController: AlertController,
+    public loadingController: LoadingController) { }
 
   ngOnInit() {
-    this.menu.enable(false);
-    this.txtUser = "";
-    this.txtSenha = "";
+    
   }
 
   ionViewDidLeave() {
@@ -38,13 +38,28 @@ export class LoginPage implements OnInit {
   logar(){
     
    console.log(this.txtUser);
-   if(this.txtUser == this.user.usuario && this.txtSenha == this.user.senha){
+   if('root' == this.user.login && '123' == this.user.senha){
+    
      this.route.navigateByUrl('/home')
    //console.log("logado");
    }else{
-    this.erro = "Usuário ou senha inválidos";
-    this.txtUser = "";
-    this.txtSenha = "";
+    this.presentAlert();
+    this.user.login = "";
+    this.user.senha = "";
    }
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Menssagem',
+      subHeader: 'Erro ao efetuar login',
+      message: 'Usuário ou senha inválido(s)! \n tente novamente!',
+      buttons: ['OK'],
+      cssClass: '--background'
+    });
+
+    await alert.present();
+  }
+
+  
 }

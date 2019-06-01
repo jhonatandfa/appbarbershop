@@ -1,16 +1,17 @@
 <ion-content padding >
-
-<ion-list class="mgt">
-  <ion-item >
-    <ion-label>Usuário</ion-label>
-    <ion-input id="opacity" type="text" autofocus [(ngModel)]="txtUser"></ion-input>
-  </ion-item>
-  <ion-item >
-    <ion-label>Senha</ion-label>
-    <ion-input id="opacity"   type="password" [(ngModel)]="txtSenha"></ion-input>
-  </ion-item>   
-</ion-list>
-<p class="small text-danger text-center">{{erro}}</p>
-<ion-button (click)="logar()" expand="block">Entrar</ion-button>
-<p class="text-center"><a  href="/register">Cadastre-se</a></p>
+  <h1 class="text-center">Login</h1>
+  <div class="form">
+  <form class="f">
+    <div class="form-group">
+      <label>Usuário:</label>
+      <input type="email" class="form-control" name="login" [(ngModel)]="user.login"  placeholder="E-mail">
+      
+    </div>
+    <div class="form-group">
+      <label>Senha:</label>
+      <input type="password" name="senha" placeholder="Senha" [(ngModel)]="user.senha">
+    </div>
+    <button type="submit" class="btn btn-danger" (click)=logar()>Entrar</button>
+  </form>
+</div>
 </ion-content>

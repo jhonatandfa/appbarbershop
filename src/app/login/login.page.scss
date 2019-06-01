@@ -2,9 +2,22 @@ ion-content{
     --background: url("../../assets/fundo1.jpg") no-repeat center center / cover;; 
 }
 
+.form{
+    height: 40%;
+    background-color: #828282;
+    margin-top: 50px;
+    padding: 3px;
+    border-radius: 5px;
+
+    .f{
+        padding: 10px;
+    }
+}
 
 
-
+label, h1{
+    color: #F8F8FF;
+}
 
 .mgt{
     margin-top: 150px;
