@@ -1,17 +1,17 @@
 <ion-content padding >
-  <h1 class="text-center">Login</h1>
+  <div>
+    <img class="logo-img" src="../../assets/logo.png">
+  </div>
   <div class="form">
-  <form class="f">
+  <form class="f text-center">
     <div class="form-group">
-      <label>Usuário:</label>
       <input type="email" class="form-control" name="login" [(ngModel)]="user.login"  placeholder="E-mail">
-      
     </div>
     <div class="form-group">
-      <label>Senha:</label>
-      <input type="password" name="senha" placeholder="Senha" [(ngModel)]="user.senha">
+      <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="user.senha">
     </div>
-    <button type="submit" class="btn btn-danger" (click)=logar()>Entrar</button>
+    <button type="submit" class="btn btn btn-dark" (click)=logar()>Entrar</button>
+    <small class="text-center text-white">Esqueceu a senha? | <a href="" class="">Cadastre-se</a></small>
   </form>
 </div>
 </ion-content>

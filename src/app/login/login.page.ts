@@ -51,9 +51,8 @@ export class LoginPage implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Menssagem',
-      subHeader: 'Erro ao efetuar login',
-      message: 'Usuário ou senha inválido(s)! \n tente novamente!',
+      header: 'Erro ao efetuar Login',
+      message: 'Usuário ou senha inválidos.',
       buttons: ['OK'],
       cssClass: '--background'
     });

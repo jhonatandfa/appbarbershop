@@ -1,24 +1,35 @@
 ion-content{
-    --background: url("../../assets/fundo1.jpg") no-repeat center center / cover;; 
+    --background: url("../../assets/barber2.jpg") no-repeat center center / cover;; 
+}
+a{
+    color: #FF4500;
+    font-size: 12px;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+small{
+    font-size: 12px;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+.logo-img{
+    width: 100%;
+}
+.form-control{
+    border-radius: 15px;
+    opacity: 0.7;
+}
+.btn{
+    border-radius: 15px;
 }
 
 .form{
+    margin-top: -20px;
     height: 40%;
-    background-color: #828282;
-    margin-top: 50px;
     padding: 3px;
-    border-radius: 5px;
-
-    .f{
-        padding: 10px;
-    }
+    border-radius: 20px;
 }
 
 
 label, h1{
     color: #F8F8FF;
-}
-
-.mgt{
-    margin-top: 150px;
 }
