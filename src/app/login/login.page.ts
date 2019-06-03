@@ -22,7 +22,9 @@ export class LoginPage implements OnInit {
   constructor(private route: Router,
     public menu: MenuController,
     public alertController: AlertController,
-    public loadingController: LoadingController) { }
+    public loadingController: LoadingController) {
+      this.menu.enable(false);
+     }
 
   ngOnInit() {
     
