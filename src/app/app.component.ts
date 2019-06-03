@@ -16,11 +16,6 @@ export class AppComponent {
       icon: 'cut'
     },
     {
-      title: 'Registro',
-      url: '/register',
-      icon: 'list'
-    },
-    {
       title: 'Seja um Parceiro',
       url: '/register-barber',
       icon: 'jet'

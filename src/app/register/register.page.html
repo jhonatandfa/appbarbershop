@@ -1,40 +1,27 @@
-<ion-header>
-    <ion-toolbar color="dark">
-      <ion-buttons slot="start" >
-        <ion-menu-button color="light"></ion-menu-button>
-      </ion-buttons>
-      <ion-title></ion-title>
-    </ion-toolbar>
-  </ion-header>
-
 <ion-content padding>
-  <ion-list class="mgt">
-    <ion-item >
-      <ion-label>Nome:</ion-label>
-      <ion-input   type="text" autofocus [(ngModel)]="txtUser"></ion-input>
-    </ion-item>
-    <ion-item >
-      <ion-label>cpf:</ion-label>
-      <ion-input id="opacity"  type="text" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item> 
-    <ion-item >
-      <ion-label>Email:</ion-label>
-      <ion-input id="opacity"  type="email" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item> 
-    <ion-item >
-      <ion-label>Senha</ion-label>
-      <ion-input id="opacity"  type="password" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item> 
-    <ion-item >
-      <ion-label>Confirmar senha:</ion-label>
-      <ion-input id="opacity"  type="password" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item> 
-    <ion-item >
-      <ion-label>Senha</ion-label>
-      <ion-input id="opacity"  type="text" [(ngModel)]="txtSenha"></ion-input>
-    </ion-item>   
-</ion-list>
-<p class="small text-danger text-center">{{erro}}</p>
-<ion-button (click)="logar()" expand="block">Entrar</ion-button>
+    <div>
+        <img class="logo-img" src="../../assets/logo.png">
+      </div>
+      <div class="form">
+      <form class="f text-center">
+        <div class="form-group">
+          <input type="text" class="form-control" name="login" [(ngModel)]="user.name"  placeholder="Nome">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" name="login" [(ngModel)]="user.cpf"  placeholder="CPF">
+          </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="login" [(ngModel)]="user.email"  placeholder="E-mail">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="user.senha">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="senha" placeholder="Confirmar Senha" [(ngModel)]="user.senha.confirm">
+          </div>
+        <button type="submit" class="btn btn btn-dark">Registrar</button>
+        <small class="text-center text-white">Já possui conta? | <a href="/login" class="">Entrar</a></small>
+      </form>
+    </div>
 
 </ion-content>
