@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { LoadingController, ToastController, AlertController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -11,7 +10,6 @@ import { Usuario } from '../entities/usuario';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  public userRegister: User = {};
   private loading: any;
   private usuario: Usuario;
 

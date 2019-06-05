@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -7,13 +9,10 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
+  {path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard]},
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard]}
 
 ];
 
