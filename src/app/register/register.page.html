@@ -5,19 +5,19 @@
       <div class="form">
       <form class="f text-center">
         <div class="form-group">
-          <input type="text" class="form-control" name="login" [(ngModel)]="userRegister.name"  placeholder="Nome">
+          <input type="text" class="form-control" name="login" [(ngModel)]="usuario.nome"  placeholder="Nome">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="login" [(ngModel)]="userRegister.cpf"  placeholder="CPF">
+            <input type="text" class="form-control" name="login" [(ngModel)]="usuario.cpf"  placeholder="CPF">
           </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="login" [(ngModel)]="userRegister.email"  placeholder="E-mail">
+          <input type="email" class="form-control" name="login" [(ngModel)]="usuario.email"  placeholder="E-mail">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="userRegister.senha">
+          <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="usuario.senha">
         </div>
         <button type="submit" class="btn btn btn-dark" (click)=register()>Registrar</button>
-        <small class="text-center text-white">Já possui conta? | <a href="/login" class="">Entrar</a></small>
+        <small class="text-center text-white">Já possui conta? | <a  (click)="login()"class="text-danger">Entrar</a></small>
       </form>
     </div>
 

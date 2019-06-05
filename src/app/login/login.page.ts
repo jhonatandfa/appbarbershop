@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { LoadingController, ToastController, MenuController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
+import { Usuario } from '../entities/usuario';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public userLogin: User = {};
+  //public userLogin: User = {};
+  private usuario: Usuario;
   private loading: any;
 
 
@@ -20,50 +22,36 @@ export class LoginPage implements OnInit {
     public menu: MenuController,
     public LoadingCtrl: LoadingController,
     private ToastCtrl: ToastController) {
-      this.menu.enable(false);
-     }
+    this.menu.enable(false);
+  }
 
   ngOnInit() {
-    
+    this.usuario = new Usuario();
+
   }
 
   ionViewDidLeave() {
     this.menu.enable(true);
   }
 
-  
-  async logar(){
+
+  async logar() {
     await this.presentLoading();
-    try{
-      await this.AuthService.login(this.userLogin);
+    try {
+      await this.AuthService.login(this.usuario);
       this.route.navigateByUrl('/home');
-  } catch(error ){
-      this.userLogin.senha = "";
-      let message:string;
-
-      switch(error.code){
-        case 'auth/wrong-password':
-        message = "Senha inválida!";
-        break;
-
-        case 'auth/user-not-found':
-        message = "Não há registro de usuário correspondente a esse e-mail!";
-        break;
-
-        case 'auth/argument-error':
-        message = "E-mail ou senha inválidos!";
-        break;
-      }
+    } catch (error) {
+      this.usuario.senha = "";
+      this.erros(error.code);
       console.error(error);
-      this.presentToast(message);
-  }finally{
+    } finally {
       this.loading.dismiss();
-  }
-   
+    }
+
   }
 
   async presentLoading() {
-    this.loading = await this.LoadingCtrl.create({message: 'Por Favor, aguarde...'});
+    this.loading = await this.LoadingCtrl.create({ message: 'Por Favor, aguarde...' });
     return this.loading.present();
 
   }
@@ -74,6 +62,30 @@ export class LoginPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  erros(error: string) {
+    let message: string;
+    switch (error) {
+      case 'auth/wrong-password':
+        message = "Senha inválida!";
+        break;
+
+      case 'auth/user-not-found':
+        message = "Não há registro de usuário correspondente a esse e-mail!";
+        break;
+
+      case 'auth/argument-error':
+        message = "E-mail ou senha inválidos!";
+        break;
+      case 'auth/invalid-email':
+        message = "Formato de e-mail inválido!";
+    }
+    this.presentToast(message);
+  }
+
+  cadastrarSe(){
+    this.route.navigateByUrl('/register');
   }
 
 }

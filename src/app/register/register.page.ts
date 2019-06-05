@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController, AlertController } from '@ionic/angular';
+import { LoadingController, ToastController, AlertController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Usuario } from '../entities/usuario';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +13,19 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
   public userRegister: User = {};
   private loading: any;
+  private usuario: Usuario;
 
-  constructor(private AuthService: AuthService,private route: Router, private AlertCtrl: AlertController, private LoadingCtrl: LoadingController, private ToastCtrl: ToastController) { 
-    
+  constructor(private AuthService: AuthService,
+    private route: Router,
+    private AlertCtrl: AlertController,
+     private LoadingCtrl: LoadingController,
+      private ToastCtrl: ToastController,
+      public menu: MenuController) { 
+        this.menu.enable(false);
   }
 
   ngOnInit() {
+    this.usuario = new Usuario();
   }
 
   async register(){
@@ -74,5 +82,9 @@ export class RegisterPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  login(){
+    this.route.navigateByUrl('/login');
   }
 }

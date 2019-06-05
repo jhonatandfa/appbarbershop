@@ -5,13 +5,13 @@
   <div class="form">
   <form class="f text-center">
     <div class="form-group">
-      <input type="email" class="form-control" name="login" placeholder="E-mail" [(ngModel)]="userLogin.email">
+      <input type="email" class="form-control" required="" name="login" placeholder="E-mail" [(ngModel)]="usuario.email">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="userLogin.senha">
+      <input type="password" class="form-control" required="Campo necessário" name="senha" placeholder="Senha" [(ngModel)]="usuario.senha">
     </div>
     <button type="submit" class="btn btn btn-dark" (click)=logar()>Entrar</button>
-    <small class="text-center text-white">Esqueceu a senha? | <a href="/register" class="">Cadastre-se</a></small>
+    <small class="text-center text-white">Esqueceu a senha? | <a  (click)="cadastrarSe()" class="text-danger">Cadastre-se</a></small>
   </form>
 </div>
 </ion-content>
