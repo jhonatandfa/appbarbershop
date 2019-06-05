@@ -12,8 +12,10 @@ const routes: Routes = [
   },
   {path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard]},
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule', canActivate: [RegisterGuard] },
-  { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard]}
+  { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule', canActivate: [AuthGuard]},
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard]},
+  { path: 'config', loadChildren: './config/config.module#ConfigPageModule', canActivate: [AuthGuard]}
+
 
 ];
 
