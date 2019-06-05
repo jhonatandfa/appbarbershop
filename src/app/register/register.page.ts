@@ -32,7 +32,7 @@ export class RegisterPage implements OnInit {
     await this.presentLoading();
 
     try{
-        await this.AuthService.register(this.userRegister);
+        await this.AuthService.register(this.usuario);
         await this.presentAlert();
         await this.route.navigateByUrl('/login');
 
