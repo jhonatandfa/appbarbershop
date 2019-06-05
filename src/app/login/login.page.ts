@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../interfaces/user';
 import { LoadingController, ToastController, MenuController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { Usuario } from '../entities/usuario';
@@ -12,7 +11,6 @@ import { Usuario } from '../entities/usuario';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  //public userLogin: User = {};
   private usuario: Usuario;
   private loading: any;
 
