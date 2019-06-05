@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-   firebaseConfig: {
-    apiKey: "AIzaSyDjbxe5cNL7LZZLC_Zku7YxAOgL-L_NmPw",
-    authDomain: "appbarbeshop.firebaseapp.com",
-    databaseURL: "https://appbarbeshop.firebaseio.com",
-    projectId: "appbarbeshop",
-    storageBucket: "appbarbeshop.appspot.com",
-    messagingSenderId: "734552615340",
-    appId: "1:734552615340:web:1fd312a7f4d0c043"
+   firebase: {
+    apiKey: "AIzaSyBIhxMfDOwy200KEifG4ZeVMBof2cbtL9Y",
+    authDomain: "appbarbershop-13b27.firebaseapp.com",
+    databaseURL: "https://appbarbershop-13b27.firebaseio.com",
+    projectId: "appbarbershop-13b27",
+    storageBucket: "appbarbershop-13b27.appspot.com",
+    messagingSenderId: "518944780580",
+    appId: "1:518944780580:web:9d5c43ef2d446def"
   }
 };
 
