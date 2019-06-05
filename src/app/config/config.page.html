@@ -7,6 +7,16 @@
     </ion-toolbar>
   </ion-header>
 <ion-content padding>
-    <button type="submit" class="btn btn btn-dark">Editar perfil</button>
-    <ion-button color="danger" expand="block" (click)="sair()">Sair</ion-button>
+    <ion-item href="">
+        <ion-label>
+          Editar perfil
+        </ion-label>
+        <ion-icon name="create" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item (click)="sair()">
+          <ion-label>
+            Sair
+          </ion-label>
+          <ion-icon name="exit" slot="start"></ion-icon>
+        </ion-item>
 </ion-content>
