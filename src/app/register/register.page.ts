@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterPage implements OnInit {
   public userRegister: User = {};
   private loading: any;
 
-  constructor(private AuthService: AuthService, private LoadingCtrl: LoadingController, private ToastCtrl: ToastController) { 
+  constructor(private AuthService: AuthService,private route: Router, private AlertCtrl: AlertController, private LoadingCtrl: LoadingController, private ToastCtrl: ToastController) { 
     
   }
 
@@ -24,6 +25,9 @@ export class RegisterPage implements OnInit {
 
     try{
         await this.AuthService.register(this.userRegister);
+        await this.presentAlert();
+        await this.route.navigateByUrl('/login');
+
     } catch(error ){
         console.error(error);
         let message:string;
@@ -61,5 +65,14 @@ export class RegisterPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  async presentAlert() {
+    const alert = await this.AlertCtrl.create({
+      header: 'Cadastrado com sucesso!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
