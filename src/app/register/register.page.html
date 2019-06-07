@@ -8,15 +8,15 @@
           <input type="text" class="form-control" name="login" [(ngModel)]="usuario.nome"  placeholder="Nome">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="login" [(ngModel)]="usuario.cpf"  placeholder="CPF">
-          </div>
-        <div class="form-group">
           <input type="email" class="form-control" name="login" [(ngModel)]="usuario.email"  placeholder="E-mail">
         </div>
         <div class="form-group">
           <input type="password" class="form-control" name="senha" placeholder="Senha" [(ngModel)]="usuario.senha">
         </div>
-        <button type="submit" class="btn btn btn-dark" (click)=register()>Registrar</button>
+        <div class="form-group">
+          <input type="password" class="form-control" name="senha" placeholder="Confirmar senha" [(ngModel)]="confirmSenha">
+        </div>
+        <button type="submit" class="btn btn btn-dark" (click)=confimSenha()>Registrar</button>
         <small class="text-center text-white">Já possui conta? | <a  (click)="login()"class="text-danger">Entrar</a></small>
       </form>
     </div>
