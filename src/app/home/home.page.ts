@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BarbeariaService } from '../services/barbearia.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  private barbearias$:any;
 
-  constructor() {}
+  constructor(private barberiaService:BarbeariaService) {
+    this.barbearias$ = this.barberiaService.getAll();
+  }
 
 }
