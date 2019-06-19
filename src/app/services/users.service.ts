@@ -12,4 +12,8 @@ export class UsersService {
   save(user: Usuario){
     return this.bd.list("usuarios").push(user);
   }
+
+  get(key:string){
+    return this.bd.object<Usuario>("usuarios/"+key)
+  }
 }

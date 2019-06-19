@@ -6,6 +6,15 @@
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content padding>
+  <ion-input placeholder="Barbearia" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
+  <ion-input placeholder="Telefone" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
+  <ion-input placeholder="Endereço" name="endereco" [(ngModel)]="barbearia.endereco"></ion-input>
+  <ion-button color="dark" (click)=registerBarber()>CADASTRAR</ion-button>
+  <ion-button color="danger">CANCELAR</ion-button>
 
+  <ion-content padding >
+    <div class="map" id="map_canvas" (click) = "pegaLocal()"></div>
+  </ion-content>
+  
 </ion-content>
