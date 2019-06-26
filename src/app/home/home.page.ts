@@ -11,6 +11,7 @@ export class HomePage {
 
   constructor(private barberiaService:BarbeariaService) {
     this.barbearias$ = this.barberiaService.getAll();
+    console.log(this.barbearias$);
   }
 
 }

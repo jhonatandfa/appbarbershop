@@ -1,5 +1,5 @@
 export class Barbearia {
-    id:string;
+    key:string;
     nome:string;
     telefone:string;
     endereco:string;

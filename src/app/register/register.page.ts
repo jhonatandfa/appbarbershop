@@ -33,12 +33,12 @@ export class RegisterPage implements OnInit {
   }
 
   confimSenha(){
-    if(this.usuario.nome == null){
+    if(this.usuario.nome.trim() == null || this.usuario.nome.trim() === ""){
       this.presentToast("Por favor informe o seu nome!");
-    }else if(this.usuario.email == null){
+    }else if(this.usuario.email.trim() == null || this.usuario.email.trim() === ""){
       this.presentToast("Por favor informe o seu e-mail!");
     } 
-    else if(this.usuario.senha !== this.confirmSenha){
+    else if(this.usuario.senha.trim() !== this.confirmSenha || this.usuario.senha.trim() === ""){
       this.presentToast("As senhas não se coincidem!");
       this.confirmSenha = "";
     }else {

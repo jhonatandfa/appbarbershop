@@ -10,10 +10,10 @@ import {
   GeocoderRequest,
   MyLocation
 } from '@ionic-native/google-maps';
-import { Platform } from '@ionic/angular';
+import { Platform, ToastController } from '@ionic/angular';
 import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
-
+ 
 
 @Component({
   selector: 'app-register-barber',
@@ -28,8 +28,7 @@ export class RegisterBarberPage implements OnInit {
   zoom: number = 15;
   barbearia:Barbearia;
 
-  constructor(private platform: Platform, private barberService: BarbeariaService) {
-
+  constructor(private platform: Platform,private ToastCtrl: ToastController, private barberService: BarbeariaService) {
   }
   async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
@@ -39,10 +38,33 @@ export class RegisterBarberPage implements OnInit {
     await this.loadMap();
   }
 
+  validaTele(){
+    this.barbearia.telefone =this.barbearia.telefone.replace(/D/g,"");
+  }
 
+  confirmBarber(){
+    if(this.barbearia.nome.trim() == null || this.barbearia.nome.trim() === ""){
+      this.presentToast("Por favor informe o seu nome da sua Barbearia!");
+    }else if(this.barbearia.telefone.trim() == null || this.barbearia.telefone.trim() === "" || this.barbearia.telefone.length !== 8){
+      this.presentToast("Por favor informe o telefone da sua Barbearia!");
+    }else if(this.barbearia.endereco.trim() == null || this.barbearia.endereco.trim() === ""){
+      this.presentToast("Por favor informe o endereço da sua Barbearia!");
+    }else {
+      this.registerBarber();
+    }
+  }
 
   registerBarber(){
     this.barberService.save(this.barbearia);
+  }
+
+
+  async presentToast(message: string) {
+    const toast = await this.ToastCtrl.create({
+      message,
+      duration: 2000
+    });
+    toast.present();
   }
 
 
