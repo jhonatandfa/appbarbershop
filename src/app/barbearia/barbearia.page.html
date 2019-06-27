@@ -1,19 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>barbearia</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start" >
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>{{teste.nome}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
-  </ion-card>
+  <div class="container" *ngIf="barbearia$ |async as barbearia" >
+          <div class="col-4" >
+            <img src="../../assets/fundo.jpg">
+          </div>
+          
+            <h1 >{{barbearia.nome}} </h1>
+            <p>{{barbearia.key}}</p>
+            <p><span class="fa fa-star checked"> 5,0</span> | 1.2 km</p>
+            <p id="open">Aberto agora</p>
+          
+        </div>
 </ion-content>

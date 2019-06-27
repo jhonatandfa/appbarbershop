@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BarbeariaService } from '../services/barbearia.service';
-import { Barbearia } from '../entities/barbearia';
+
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,6 @@ export class HomePage {
 
   constructor(private barberiaService:BarbeariaService) {
     this.barbearias$ = this.barberiaService.getAll();
-    console.log(this.barbearias$);
   }
 
 }

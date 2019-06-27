@@ -25,6 +25,6 @@ export class BarbeariaService {
   }
 
   get(key:string){
-    return this.bd.object<Barbearia>("barbearias/"+key)
+    return this.bd.object<Barbearia>("barbearias/"+key).valueChanges()
   }
 }
