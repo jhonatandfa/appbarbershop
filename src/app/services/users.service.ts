@@ -16,4 +16,8 @@ export class UsersService {
   get(key:string){
     return this.bd.object<Usuario>("usuarios/"+key)
   }
+
+  get1(user: Usuario){
+    return this.bd.list('/usuarios/', ref => ref.orderByChild('nome').equalTo(user.email));
+  }
 }

@@ -12,6 +12,11 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK|Open+Sans|Roboto|Ubuntu&display=swap');
 
 /* style inputs and link buttons */
+
+.fundo {
+  --background: url('./assets/fundoHome.png');
+}
+
 input,
 .btn {
   width: 100%;

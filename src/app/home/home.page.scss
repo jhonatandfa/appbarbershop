@@ -3,26 +3,37 @@
     border-radius: 3px;
     box-shadow: 0 4px 4px -2px #ebeaea;
     margin-bottom: 10px;
-img{
-    width: 50px;
-    height: 50px;
-    float: left;
-    border-radius: 25px;
-    margin: 8px 0 8px 0;
+
+    img{
+    width: 75px;
+    height: 75px;
+    
+    border-radius: 50px;
+    
 }
+
+.row {
+    margin: 8px 0;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    border-radius: 3px;
+}
+
 h1{
-    font-size: 13px;
-    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-family: sans-serif;
     font-weight: bold;
-    margin: 6px 0 2px 0;
+    color: #ebeaea;
+    opacity: 0.8;
+   
 }
 p{
     font-size: 12px;
+    color: #FF4500;
     font-family: 'Roboto', sans-serif;
 }
 
 .checked {
-  color: orange;
+  color: #ebeaea;
 }
 
 #open{
@@ -33,3 +44,15 @@ p{
     font-family: 'Open Sans', sans-serif;
 }
 }
+
+#status span {
+    font-weight: bold;
+    color: #FF4500;
+}
+
+#status {
+    color: #ebeaea;
+    margin: 0;
+    text-align: right;
+}
+

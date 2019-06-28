@@ -38,9 +38,6 @@ export class RegisterBarberPage implements OnInit {
     await this.loadMap();
   }
 
-  validaTele(){
-    this.barbearia.telefone =this.barbearia.telefone.replace(/D/g,"");
-  }
 
   confirmBarber(){
     if(this.barbearia.nome.trim() == null || this.barbearia.nome.trim() === ""){
