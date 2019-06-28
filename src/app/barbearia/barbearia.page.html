@@ -7,16 +7,20 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content padding>
-  <div class="container" *ngIf="barbearia$ |async as barbearia" >
-          <div class="col-4" >
-            <img src="../../assets/fundo.jpg">
-          </div>
-          
-            <h1 >{{barbearia.nome}} </h1>
-            <p>{{barbearia.key}}</p>
-            <p><span class="fa fa-star checked"> 5,0</span> | 1.2 km</p>
-            <p id="open">Aberto agora</p>
-          
-        </div>
+<ion-content>
+  <div  *ngIf="barbearia$ |async as barbearia" >
+    <div class="fundo">
+        <h1 class="title text-center">{{barbearia.nome}} </h1>
+        <p class="">{{barbearia.key}}</p>
+        <p>
+          <span class="fa fa-star checked text-right">Avaliação: 5,0</span> | 1.2 km
+        </p>
+        <p id="open">Aberto agora</p>
+      <address class="endereco">
+       <span class="end">Endereço:</span> {{barbearia.endereco}}
+      </address>
+    </div>   
+    <button type="button" class="btn " padding>Agendar Atendimeto</button>
+</div>
+     
 </ion-content>
