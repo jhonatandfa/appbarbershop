@@ -7,7 +7,7 @@
 
 
 ion-toolbar{
-    --background: #cecece;
+    --background: url('../assets/1.jpg');
 }
 
 .icon-contact{
@@ -22,6 +22,7 @@ ion-toolbar{
     margin-left: 10px;
     font-weight: bold;
     font-family: sans-serif;
+    --background: #000;
 }
 .email{
     font-size: 10px;
@@ -32,3 +33,6 @@ ion-toolbar{
 
 }
 
+.fundo {
+    --background: url('./../assets/fundoHome.png');
+  }

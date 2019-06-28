@@ -11,7 +11,7 @@ import { Usuario } from '../entities/usuario';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  private usuario: Usuario;
+  public usuario: Usuario;
   private loading: any;
 
 
