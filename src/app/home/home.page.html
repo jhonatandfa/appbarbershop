@@ -8,19 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="card mb-4" style="max-width: 540px;" *ngIf="barbearias$ |async as barbearias">
-    <div class="row no-gutters" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
-      <div class="col-md-4">
-        <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342"
-          class="card-img" alt="...">
-      </div>
-      <div  class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{barbearia.nome}}</h5>
-          <p class=""><span class="fa fa-star checked"> 5,0 </span> | 1.2 km</p>
-          <p class="card-text"><small class="text-muted text-success">Aberto agora</small></p>
-        </div>
+    <div *ngIf="barbearias$ |async as barbearias">
+      <div style="background-image: url('https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342'); " class="barbearia" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
+        <h2>{{barbearia.nome}}</h2>
+        <p>{{barbearia.nomeBarber}}</p>
+        <p>{{barbearia.telefone}}</p>
+        <p>{{barbearia.endereco}}</p>
+        <p>AM {{barbearia.horarioAbert}} ás {{barbearia.horarioFecha}} PM</p>
       </div>
     </div>
-  </div>
 </ion-content>
