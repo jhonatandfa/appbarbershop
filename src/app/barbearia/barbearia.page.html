@@ -10,30 +10,12 @@
 <ion-content> 
   <div  *ngIf="barbearia$ |async as barbearia" >
     <div>
-        <h1 class="title text-center">{{barbearia.nome}} </h1>
-        <h6 class="text-center">Escolha o barbeiro de sua preferência</h6>
+        <h1 class="text-center">{{barbearia.nome}} </h1>
+        <p class="text-center">Endereço: {{barbearia.endereco}}</p>
+        <p class="text-center">Telefone: {{barbearia.telefone}}</p>
+        <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342">
+        <ion-button color="dark" expand="full">Agendar horário</ion-button>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://blog.keydesign.com.br/wp-content/uploads/2017/02/extremely-stupid-reasons-men-give-to-shave-off-their-beard-980x457-1459856736_980x457.jpg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Fernado Marques</h5>
-          <p class="card-text">Especialista em barbas</p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0R0f00000wuO5OEAU/5b3f7982e4b05a814b6f7f79.jpg&w=620&h=400" alt="Card image cap">
-          <div class="card-body">
-              <h5 class="card-title">Lucas Fonseca</h5>
-            <p class="card-text">Especialista em sombrancelhas</p>
-          </div>
-        </div>  
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://i.pinimg.com/236x/29/dd/0a/29dd0aeb100d8c6b8a7e5aea3100b4cb.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Lopes Antonio</h5>
-              <p class="card-text">Especialista em cortes masculinos</p>
-            </div>
-          </div>     
 </div>
      
 </ion-content>

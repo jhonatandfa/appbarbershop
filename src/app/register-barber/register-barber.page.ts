@@ -40,15 +40,8 @@ export class RegisterBarberPage implements OnInit {
 
 
   confirmBarber(){
-    if(this.barbearia.nome.trim() == null || this.barbearia.nome.trim() === ""){
-      this.presentToast("Por favor informe o seu nome da sua Barbearia!");
-    }else if(this.barbearia.telefone.trim() == null || this.barbearia.telefone.trim() === "" || this.barbearia.telefone.length !== 8){
-      this.presentToast("Por favor informe o telefone da sua Barbearia!");
-    }else if(this.barbearia.endereco.trim() == null || this.barbearia.endereco.trim() === ""){
-      this.presentToast("Por favor informe o endereço da sua Barbearia!");
-    }else {
+     
       this.registerBarber();
-    }
   }
 
   registerBarber(){

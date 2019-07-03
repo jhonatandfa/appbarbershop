@@ -1,6 +1,9 @@
 export class Barbearia {
     key:string;
     nome:string;
+    nomeBarber:string;
+    horarioAbert:string;
+    horarioFecha:string;
     telefone:string;
     endereco:string;
     lng:string;
