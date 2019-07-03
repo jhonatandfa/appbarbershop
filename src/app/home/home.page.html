@@ -1,25 +1,26 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-buttons slot="start" >
+    <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  padding>
-        <div class="card mb-4" style="max-width: 540px;" *ngIf="barbearias$ |async as barbearias">
-            <div class="row no-gutters" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
-              <div class="col-md-4">
-                <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342" class="card-img" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{barbearia.nome}}</h5>
-                  <p class=""><span class="fa fa-star checked"> 5,0 </span> |  1.2 km</p> 
-                  <p class="card-text"><small class="text-muted text-success">Aberto agora</small></p>
-                </div>
-              </div>
-            </div>
-            </div>
+<ion-content padding>
+  <div class="card mb-4" style="max-width: 540px;" *ngIf="barbearias$ |async as barbearias">
+    <div class="row no-gutters" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
+      <div class="col-md-4">
+        <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342"
+          class="card-img" alt="...">
+      </div>
+      <div  class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{barbearia.nome}}</h5>
+          <p class=""><span class="fa fa-star checked"> 5,0 </span> | 1.2 km</p>
+          <p class="card-text"><small class="text-muted text-success">Aberto agora</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
