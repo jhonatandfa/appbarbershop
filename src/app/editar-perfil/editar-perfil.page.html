@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>editarPerfil</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" >
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-toolbar class="title">
+    <ion-title>Editar Perfil</ion-title>
+</ion-toolbar>
+<div *ngIf="usuario$ |async as user">
+<ion-item>
+    <ion-label position="stacked">Nome <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" placeholder="Nome" name="nome" autofocus [(ngModel)]="user.nome">{{user.nome}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" placeholder="Email" name="email" autofocus [(ngModel)]="user.email">{{user.email}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Senha <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" placeholder="Senha" name="senha" autofocus [(ngModel)]="user.senha">{{user.senha}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Confirmar Senha <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" placeholder="Confirma Senha" name="confirmaSenha" autofocus [(ngModel)]="confirmaSenha"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button color="dark" (click)=confirmBarber()>Salvar Alterações</ion-button>
+  <ion-button color="danger">CANCELAR</ion-button>
+  </div>
 </ion-content>

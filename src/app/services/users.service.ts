@@ -17,7 +17,8 @@ export class UsersService {
     return this.bd.object<Usuario>("usuarios/"+key).valueChanges()
   }
 
-  get1(user: Usuario){
-    return this.bd.list('/usuarios/', ref => ref.orderByChild('nome').equalTo(user.email));
+  utpate(user:Usuario){
+    this.bd.object<Usuario>("usuarios/").set(user);
   }
+
 }
