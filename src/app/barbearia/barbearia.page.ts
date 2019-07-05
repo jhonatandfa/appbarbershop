@@ -18,4 +18,7 @@ public barbearia$:any;
     this.barbearia$ = this.barbeariaService.get(this.route.snapshot.paramMap.get('id'));
   }
 
+  goAgendamento(){
+    this.router.navigateByUrl('/agendamento');
+  }
 }

@@ -10,8 +10,8 @@ export class BarbeariaService {
 
   constructor(private bd:AngularFireDatabase) { }
 
-  save(barbearia: Barbearia){
-    return this.bd.list("barbearias").push(barbearia);
+  save(barbearia: Barbearia, key:string){
+    return this.bd.list("barbearias/"+key).push(barbearia);
   }
 
 

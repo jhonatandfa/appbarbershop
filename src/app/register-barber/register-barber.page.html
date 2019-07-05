@@ -7,8 +7,19 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="" padding>
-  <ion-input placeholder="Barbearia" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
-  <ion-input type="number" max="8" placeholder="Telefone" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
+    <ion-item>
+        <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Barbeiro <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number" max="8" placeholder="Nome do barbeiro" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input type="text" placeholder="Nome do Barbeiro" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
+          </ion-item>
+ 
   <ion-input type="text" placeholder="Nome do Barbeiro" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
   <ion-input type="time" placeholder="Horário de abertura" name="horaAbert" [(ngModel)]="barbearia.horarioAbert"></ion-input>
   <ion-input type="time" placeholder="Horário de fechamento" name="horaFecha" [(ngModel)]="barbearia.horarioFecha"></ion-input>

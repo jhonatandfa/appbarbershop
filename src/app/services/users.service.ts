@@ -9,8 +9,8 @@ export class UsersService {
 
   constructor(private bd:AngularFireDatabase) { }
 
-  save(user: Usuario){
-    return this.bd.list("usuarios").push(user);
+  save(user: Usuario, key:string){
+    return this.bd.list("usuarios/"+key).push(user);
   }
 
   get(key:string){

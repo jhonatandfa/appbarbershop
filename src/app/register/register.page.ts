@@ -28,9 +28,7 @@ export class RegisterPage implements OnInit {
     this.usuario = new Usuario();
   }
 
-  teste(){
-    this.UserService.save(this.usuario);
-  }
+
 
   confimSenha(){
     if(this.usuario.nome.trim() == null || this.usuario.nome.trim() === ""){
@@ -50,8 +48,13 @@ export class RegisterPage implements OnInit {
     await this.presentLoading();
 
     try{
-        await this.AuthService.register(this.usuario);
-        await this.UserService.save(this.usuario);
+        await this.AuthService.register(this.usuario)
+        .then(
+          res => {
+             this.UserService.save(this.usuario, res.user.uid);
+
+          }
+        )
         await this.presentAlert();
         await this.route.navigateByUrl('/login');
 
