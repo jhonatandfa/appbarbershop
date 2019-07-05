@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
   private loading: any;
 
 
-  constructor(private AuthService: AuthService,
+  constructor(public AuthService: AuthService,
     private route: Router,
     public menu: MenuController,
     public LoadingCtrl: LoadingController,
@@ -37,6 +37,7 @@ export class LoginPage implements OnInit {
     await this.presentLoading();
     try {
       await this.AuthService.login(this.usuario);      
+      console.log(this.AuthService)
       this.route.navigateByUrl('/home');
     } catch (error) {
       this.usuario.senha = "";

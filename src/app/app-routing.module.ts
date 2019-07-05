@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule', canActivate: [AuthGuard]},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard]},
   { path: 'config', loadChildren: './config/config.module#ConfigPageModule', canActivate: [AuthGuard]},
-  { path: 'barbearia/:id', loadChildren: './barbearia/barbearia.module#BarbeariaPageModule' }
+  { path: 'barbearia/:id', loadChildren: './barbearia/barbearia.module#BarbeariaPageModule' },  { path: 'agendamento', loadChildren: './agendamento/agendamento.module#AgendamentoPageModule' }
+
 
 
 

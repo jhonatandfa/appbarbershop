@@ -15,4 +15,5 @@ export class HomePage {
     this.barbearias$ = this.barberiaService.getAll();
   }
 
+  
 }
