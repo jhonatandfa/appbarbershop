@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Barbearia } from './entities/barbearia';
+import { Usuario } from './entities/usuario';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
 })
 
 export class AppComponent {
-  public user:Barbearia;
+  public user:Usuario;
   public appPages = [
     {
       title: 'Barbearias',
@@ -34,9 +34,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-
   ) {
- 
     this.initializeApp();
   }
 

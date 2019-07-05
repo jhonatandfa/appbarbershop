@@ -7,17 +7,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content padding>
+    <ion-toolbar class="title">
+        <ion-title>Barbearias</ion-title>
+    </ion-toolbar>
     <div class="container" *ngIf="barbearias$ |async as barbearias">
         <div class="row barbearia" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
-          <div class="col-3">
+          <div class="col-4">
             <img src="../../assets/fundo.jpg">
           </div>
-          <div class="col-9">
-            <h3>Barbearia São João</h3>
-            <p>{{barbearia.nome}}</p>
+          <div class="col-8">
+            <span class="small">Barbeiro</span>
+            <h3>{{barbearia.nome}}</h3>
+            <p>De {{barbearia.horarioAbert}} AM ás {{barbearia.horarioFecha}} PM</p>
             <p><span class="fa fa-star "> 5,0</span> | 1.2 km</p>
-            <p id="open">Aberto agora</p>
+            <p class="text">Aberto agora</p>
           </div>
         </div>
       </div>

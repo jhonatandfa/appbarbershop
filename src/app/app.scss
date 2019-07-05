@@ -55,7 +55,10 @@ ion-content.fundo .fundo .item{
 }
 
 ion-label.label{
-    color: #ebeaea !important;
-    font-family:  Helvetica, sans-serif !important;
-    opacity: 0.8;
+    color: #313131 !important;
+    font-family: custom !important;
+}
+
+.otin.item-block .item-inner, .item-md.item-block .item-inner {
+    border: 0 !important;
 }

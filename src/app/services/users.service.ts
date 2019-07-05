@@ -14,7 +14,7 @@ export class UsersService {
   }
 
   get(key:string){
-    return this.bd.object<Usuario>("usuarios/"+key)
+    return this.bd.object<Usuario>("usuarios/"+key).valueChanges()
   }
 
   get1(user: Usuario){

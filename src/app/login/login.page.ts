@@ -37,7 +37,6 @@ export class LoginPage implements OnInit {
     await this.presentLoading();
     try {
       await this.AuthService.login(this.usuario);      
-      console.log(this.AuthService)
       this.route.navigateByUrl('/home');
     } catch (error) {
       this.usuario.senha = "";

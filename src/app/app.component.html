@@ -4,17 +4,17 @@
       <ion-header>
         <ion-toolbar>
             <ion-icon class="icon-contact" name="contact"></ion-icon>
-            <p class="name">Jonathan Freitas</p>
-            <p class="email">tiJonantanhan01@gmail.com</p>
+            <p class="name">Jonathan Lopes</p>
+            <p class="email">itjonathan01@gmail.com</p>
             <!--<ion-title>teste</ion-title>-->
         </ion-toolbar>
       </ion-header>
-      <ion-content class="fundo">
+      <ion-content class="bg-light">
         <ion-list class="item">
           <ion-menu-toggle class="fundo" auto-hide="false" *ngFor="let p of appPages">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label class="label">
+              <ion-icon class="text-dark" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label class="label text-dark">
                 {{p.title}}
               </ion-label>
             </ion-item>
