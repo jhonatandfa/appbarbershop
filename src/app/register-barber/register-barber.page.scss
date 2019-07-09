@@ -3,7 +3,12 @@
     height: 50%;
   }
   
- .title {
+ .bgtitle {
     --background: #313131;
     color: white;
-  }
+    
+ }
+ .title{
+    font-size: 18px;
+    text-align: center;
+ }

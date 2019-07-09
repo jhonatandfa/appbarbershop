@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-toolbar class="title">
-        <ion-title>Barbearias</ion-title>
+    <ion-toolbar class="bgtitle">
+        <ion-title class="title">Barbearias</ion-title>
     </ion-toolbar>
     <div class="container" *ngIf="barbearias$ |async as barbearias">
         <div class="row barbearia" *ngFor="let barbearia of barbearias" routerLink="/barbearia/{{barbearia.key}}">
