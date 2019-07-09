@@ -9,15 +9,16 @@ export class UsersService {
 
   constructor(private bd:AngularFireDatabase) { }
 
-  save(user: Usuario){
-    return this.bd.list("usuarios").push(user);
+  save(user: Usuario, key:string){
+    return this.bd.list("usuarios/"+key).push(user);
   }
 
   get(key:string){
-    return this.bd.object<Usuario>("usuarios/"+key)
+    return this.bd.object<Usuario>("usuarios/"+key).valueChanges()
   }
 
-  get1(user: Usuario){
-    return this.bd.list('/usuarios/', ref => ref.orderByChild('nome').equalTo(user.email));
+  utpate(user:Usuario){
+    this.bd.object<Usuario>("usuarios/").set(user);
   }
+
 }

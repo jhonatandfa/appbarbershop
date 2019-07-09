@@ -1,75 +1,67 @@
-p {
-    padding: none;
-    font-size: 12px;
-    color: #ebeaea;
-    font-family: custom;
-}
-
-
-
-
-
-div.barbearia {
-    font-family: custom;
-    height: 150px;
-    color: #ebeaea;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    
-}
-
 .container{
     border-radius: 3px;
-    box-shadow: 0 4px 4px -2px #ebeaea;
     margin-bottom: 10px;
 
     img{
     width: 75px;
     height: 75px;
-    position: relative;
-    top: 5px;
+    display: block;
     border-radius: 50px;
-    
-    
-
+    position: relative;
+    top: 20px;
+    margin: auto;
 }
- 
 
-.row {
-    margin: 8px 0;
+.col-8 p {
+    margin-bottom: 0;    
+}
+
+div.col-8{
+    padding-left: 0;
+
+    .small{
+        position: relative;
+        top: 6px;
+        color: #313131;
+    }
+}
+}
+.title {
+    --background: #313131;
+    padding: 0;
+    margin-bottom: 10px;
+    text-align:left;
+    color: #FFFAFA;
+}
+
+.small {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #313131;
+}
+
+.barbearia {
+    border-top: #313131 solid 4px;
+    background: #FFFAFA;
+    box-shadow: 5px 10px 18px #000;
+    margin-bottom: 20px;
     border-radius: 5px;
+    
+}
+
+ion-content{
+    --background: #FFFAFA;
 }
 
 
 
-h3{
+.col-8 h3 {
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: custom !important;
     font-weight: bold;
-    color: #000;
-    opacity: 0.8;
-    padding-top: 4px;
-   
+    color: #313131;
 }
 
-
-.checked {
-  color: #ebeaea;
-}
-
-#open{
-    font-size: 12px;
-    color: green;
-    text-align: end;
-    margin: -5px 0 0 0;
-    font-family: 'Open Sans', sans-serif;
-}
-}
-
-#status span {
-    font-weight: bold;
-    color: #FF4500;
-}
 
 #status {
     color: #ebeaea;
@@ -77,3 +69,7 @@ h3{
     text-align: right;
 }
 
+.text {
+    text-align: right;
+    color: green;
+}

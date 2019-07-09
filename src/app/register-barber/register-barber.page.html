@@ -7,17 +7,39 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="" padding>
-  <ion-input placeholder="Barbearia" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
-  <ion-input type="number" max="8" placeholder="Telefone" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
-  <ion-input type="text" placeholder="Nome do Barbeiro" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
-  <ion-input type="time" placeholder="Horário de abertura" name="horaAbert" [(ngModel)]="barbearia.horarioAbert"></ion-input>
-  <ion-input type="time" placeholder="Horário de fechamento" name="horaFecha" [(ngModel)]="barbearia.horarioFecha"></ion-input>
-  <ion-input  placeholder="Endereço" name="endereco" [(ngModel)]="barbearia.endereco"></ion-input>
-  <ion-button color="dark" (click)=confirmBarber()>CADASTRAR</ion-button>
-  <ion-button color="danger">CANCELAR</ion-button>
-
-  <ion-content padding >
-    <div class="map" id="map_canvas" (click) = "pegaLocal()"></div>
-  </ion-content>
-  
+    <ion-toolbar class="title">
+        <ion-title>Angendamento</ion-title>
+    </ion-toolbar>
+    <ion-item>
+        <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" placeholder="Nome da Barbearia" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
+      </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="text" placeholder="Nome do Barbeiro" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
+            </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Telefone <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number" max="8" placeholder="Nome do barbeiro" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Horário de abertura <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input type="time" placeholder="Horário de abertura" name="horaAbert" [(ngModel)]="barbearia.horarioAbert"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Horário de fechamento <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="time" placeholder="Horário de fechamento" name="horaFecha" [(ngModel)]="barbearia.horarioFecha"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Endereco <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="text" placeholder="Endereço da Barbearia" name="endereco" [(ngModel)]="barbearia.endereco"></ion-input>
+              </ion-item>
+              <br>
+          <ion-button color="dark" (click)=confirmBarber()>CADASTRAR</ion-button>
+          <ion-button color="danger">CANCELAR</ion-button>
+              
+          <ion-content padding >
+            <div class="map" id="map_canvas" (click) = "pegaLocal()">
+          </div>
+          </ion-content>
 </ion-content>

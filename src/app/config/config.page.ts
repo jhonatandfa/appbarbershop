@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-config',
@@ -8,12 +9,17 @@ import { AuthService } from '../services/auth.service';
 })
 export class ConfigPage implements OnInit {
 
-  constructor(private AuthService: AuthService) { }
+  constructor(private AuthService: AuthService,
+    private route:Router) { }
 
   ngOnInit() {
   }
 
   sair(){
     this.AuthService.logout();
+  }
+
+   goEditarPerfil(){
+    this.route.navigateByUrl('/editar-perfil');
   }
 }

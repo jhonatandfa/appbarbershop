@@ -14,8 +14,12 @@
 /* style inputs and link buttons */
 
 .fundo {
-  --background: #1C1C1C;
+  --background: #313131;
   /*url('./assets/fundoHome.png') */
+}
+
+* {
+  font-family: custom;
 }
 
 input,
