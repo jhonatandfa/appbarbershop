@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { Usuario } from '../entities/usuario';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -11,8 +12,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class EditarPerfilPage implements OnInit {
 
   public confirmaSenha:string = "";
-  public user:Usuario = null;
-  public usuario$:any;
+  //public user:Usuario = null;
+  public user:Usuario = new Usuario();
   
   key:any;
   constructor(private userService:UsersService,
@@ -20,10 +21,17 @@ export class EditarPerfilPage implements OnInit {
     }
 
   ngOnInit() {
-    this.user = new Usuario();
+    this.AuthService.user.subscribe(
+      res=>{
+        this.key = res.uid;
+       this.userService.get(res.uid).subscribe(
+         u => this.user = u
+       )
+      }  
+      )
   }
 
   salvarAlteracoes(){
-    this.userService.utpate(this.user);
+    this.userService.utpate(this.user, this.key);
   }
 }

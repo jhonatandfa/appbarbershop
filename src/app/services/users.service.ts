@@ -10,15 +10,15 @@ export class UsersService {
   constructor(private bd:AngularFireDatabase) { }
 
   save(user: Usuario, key:string){
-    return this.bd.list("usuarios/"+key).push(user);
+    return this.bd.object("usuarios/"+key).set(user);
   }
 
   get(key:string){
     return this.bd.object<Usuario>("usuarios/"+key).valueChanges()
   }
 
-  utpate(user:Usuario){
-    this.bd.object<Usuario>("usuarios/").set(user);
+  utpate(user: Usuario, key:string){
+    this.bd.object<Usuario>("usuarios/"+key).update(user);
   }
 
 }
