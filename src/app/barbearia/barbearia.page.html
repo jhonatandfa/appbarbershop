@@ -8,7 +8,7 @@
   </ion-header>
 
 <ion-content> 
-  <div  *ngIf="barbearia$ |async as barbearia" >
+  <div  *ngIf="barbearia$ |async as barbearia">
     <div>
         <h1 class="text-center">{{barbearia.nome}} </h1>
         <p class="text-center">Endereço: {{barbearia.endereco}}</p>
@@ -17,5 +17,4 @@
         <ion-button color="dark" expand="full">Agendar horário</ion-button>
     </div>
 </div>
-     
 </ion-content>
