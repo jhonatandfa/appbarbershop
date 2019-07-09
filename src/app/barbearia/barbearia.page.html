@@ -11,7 +11,9 @@
   <div  *ngIf="barbearia$ |async as barbearia">
     <div>
         <h1 class="text-center">{{barbearia.nome}}</h1>
+        <p class="text-center">Barbeiro: {{barbearia.nomeBarber}}</p>
         <p class="text-center">Endereço: {{barbearia.endereco}}</p>
+
         <p class="text-center">Telefone: {{barbearia.telefone}}</p>
         <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342">
         <ion-button color="dark" (click)="goAgendamento()" expand="full">Agendar horário</ion-button>
