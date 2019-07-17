@@ -1,8 +1,9 @@
 export class Agendamento {
     key:string;
-    momento:string;
-    dataEhoraDoAgendamento:Date;
+    momento:Date = new Date();
+    dataDoAgendamento:string = "19/07/2019";
+    horaDoAgendamento:string;
     idCliente:string;
-    pedido:string;
-    status:boolean;
+    servico:string;
+    status:string;
 }

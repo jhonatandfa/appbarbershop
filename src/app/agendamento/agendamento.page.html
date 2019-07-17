@@ -1,33 +1,45 @@
 <ion-header>
-    <ion-toolbar color="dark">
-      <ion-buttons slot="start" >
-        <ion-menu-button color="light"></ion-menu-button>
-      </ion-buttons>
-      <ion-title></ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
   <ion-toolbar class="title">
     <ion-title>Agendamento</ion-title>
-</ion-toolbar>
-<ion-item>
-  <ion-label>Selecione o dia:</ion-label>
-  <ion-datetime value="" display-format="DD-MM-YYYY" placeholder="Selecione a Data"></ion-datetime>
-</ion-item>
-<ion-toolbar class="title">
-  <ion-title>Horários</ion-title>
-  <br>
-  <br>
-</ion-toolbar>
-<ion-list>
-  <ion-radio-group>
-
-    <ion-item *ngFor="let hour of hours">
-      <ion-label>{{hour | date: 'HH:mm' }}</ion-label>
-      <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item>
+      <ion-label>Serviço:</ion-label>
+      <ion-select (ionChange)="getService($event)"  placeholder="Select One">
+        <ion-select-option value="f" >Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
     </ion-item>
-
-  </ion-radio-group>
+  </ion-list>
+  <ion-list>
+  <ion-item>
+    <ion-label>Data:</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" value="18-07-2019" min="2019-07-17" (ionChange)="getDate($event)"
+      placeholder="Selecione a Data" max="2020-10-31" [(ngModel)]="agendamento.dataDoAgendamento">
+    </ion-datetime>
+  </ion-item>
 </ion-list>
+  <ion-toolbar class="title">
+    <ion-title class="label">Horários</ion-title>
+  </ion-toolbar>
+  <ion-list>
+    <ion-radio-group>
+
+      <ion-item [ngClass]="cor" (click)="getCorHour()" *ngFor="let hour of hours" (click)="getHora(hour)">
+        <ion-label class="label" min="2018-12-19" value="" name="myDate">{{hour | date: 'HH:mm' }}</ion-label>
+        <!-- <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio> -->
+      </ion-item>
+
+
+    </ion-radio-group>
+  </ion-list>
 </ion-content>
