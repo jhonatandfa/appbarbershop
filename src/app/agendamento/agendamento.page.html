@@ -8,21 +8,26 @@
   </ion-header>
 
 <ion-content padding>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">First</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>8:00</td>
-        <td>8:15</td>
-      </tr>
-      <tr>
-        <td>8:15</td>
-        <td>8:30</td>
-      </tr>
-    </tbody>
-  </table>
+  <ion-toolbar class="title">
+    <ion-title>Agendamento</ion-title>
+</ion-toolbar>
+<ion-item>
+  <ion-label>Selecione o dia:</ion-label>
+  <ion-datetime value="" display-format="DD-MM-YYYY" placeholder="Selecione a Data"></ion-datetime>
+</ion-item>
+<ion-toolbar class="title">
+  <ion-title>Horários</ion-title>
+  <br>
+  <br>
+</ion-toolbar>
+<ion-list>
+  <ion-radio-group>
+
+    <ion-item *ngFor="let hour of hours">
+      <ion-label>{{hour | date: 'HH:mm' }}</ion-label>
+      <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio>
+    </ion-item>
+
+  </ion-radio-group>
+</ion-list>
 </ion-content>

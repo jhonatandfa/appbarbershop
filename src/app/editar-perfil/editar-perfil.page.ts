@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { Usuario } from '../entities/usuario';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { userInfo } from 'os';
+
 
 @Component({
   selector: 'app-editar-perfil',
