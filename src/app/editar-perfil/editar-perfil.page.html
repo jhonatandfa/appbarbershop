@@ -23,11 +23,11 @@
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Senha <ion-text color="danger">*</ion-text></ion-label>
-    <ion-input required type="text" placeholder="Senha" name="senha" autofocus [(ngModel)]="user.senha"></ion-input>
+    <ion-input required type="password" placeholder="Senha" name="senha" autofocus [(ngModel)]="user.senha"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Confirmar Senha <ion-text color="danger">*</ion-text></ion-label>
-    <ion-input required type="text" placeholder="Confirma Senha" name="confirmaSenha" autofocus [(ngModel)]="confirmaSenha"></ion-input>
+    <ion-input required type="password" placeholder="Confirma Senha" name="confirmaSenha"  [(ngModel)]="confirmaSenha"></ion-input>
   </ion-item>
   <br>
   <ion-button color="dark" (click)=salvarAlteracoes()>Salvar Alterações</ion-button>
