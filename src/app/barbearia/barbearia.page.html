@@ -10,11 +10,23 @@
 <ion-content fullscreen> 
   <div  *ngIf="barbearia$ |async as barbearia">
     <div>
-        <h1 class="text-center">{{barbearia.nome}}</h1>
-        <p class="text-center">Barbeiro: {{barbearia.nomeBarber}}</p>
-        <p class="text-center">Endereço: {{barbearia.endereco}}</p>
-        <p class="text-center">Telefone: {{barbearia.telefone}}</p>
         <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342">
+        <h1 class="text-center">{{barbearia.nome}}</h1>
+        <ion-list>
+          <ion-item>
+            <ion-icon slot="end" name="person"></ion-icon>
+            <ion-label>{{barbearia.nomeBarber}}</ion-label>
+          </ion-item>
+        <ion-item>
+            <ion-icon slot="end" name="pin"></ion-icon>
+            <ion-label>{{barbearia.endereco}}</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-icon slot="end" name="call"></ion-icon>
+              <ion-label>{{barbearia.telefone}}</ion-label>
+            </ion-item>
+        </ion-list>    
+        
         <ion-button color="dark" (click)="goAgendamento()" expand="full">Agendar horário</ion-button>
     </div>
    
