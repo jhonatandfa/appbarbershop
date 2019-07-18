@@ -1,17 +1,17 @@
 h1{
+    margin-top: 5px;
     font-size: 25px;
+    font-family:  Helvetica, sans-serif;
+    font-weight: bold;
 }
 .title {
     font-size: 30px;
     font-family:  Helvetica, sans-serif;
-      background-color: rgba(0,0,0,0.5);
-      color:#fff;
-      text-align: center;        
+    background-color: rgba(0,0,0,0.5);
+    color:#fff;
+    text-align: center;        
 }
 
-.end {
-    font-weight: bold;
-}
 
 .fundo {
     background-image: url(../../assets/1.jpg);
@@ -24,12 +24,3 @@ h1{
     color: #fff;
     font-weight: bold;
 }
-
-:root {
-    --ion-safe-area-top: 20px;
-    --ion-safe-area-bottom: 22px;
-  }
-
-  ion-card{
-    box-shadow: 5px 5px 15px #000;
-  }

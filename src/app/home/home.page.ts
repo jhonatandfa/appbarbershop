@@ -15,8 +15,17 @@ export class HomePage {
   key:any;
   constructor(private barberiaService:BarbeariaService, 
     ) {
-    this.barbearias$ = this.barberiaService.getAll();
+    this.listBarber();
   }
 
+  listBarber(){
+    this.barbearias$ = this.barberiaService.getAll();
+  }
   
+  doRefresh(event) {
+    this.listBarber();
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
+  }
 }

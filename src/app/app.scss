@@ -7,7 +7,8 @@
 
 
 ion-toolbar{
-    --background: url('../assets/1.jpg');
+    //--background: url('../assets/1.jpg');
+    --background: #000;
 }
 
 .icon-contact{
@@ -18,7 +19,7 @@ ion-toolbar{
 
 p.name{
     font-size: 15px;
-    color: orangered;
+    color: #fff;
     padding: 5px 10px;
     font-weight: bold;
     background: #000;
@@ -26,8 +27,8 @@ p.name{
 }
 p.email{
     
-    font-size: 10px;
-    color: orangered;
+    font-size: 11px;
+    color: #fff;
     padding: 4px 10px;
     font-weight: bold;
     font-family: sans-serif;
