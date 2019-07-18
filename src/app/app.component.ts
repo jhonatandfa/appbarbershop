@@ -44,6 +44,11 @@ export class AppComponent {
       title: 'Configurações',
       url: '/config',
       icon: 'construct'
+    },
+    {
+      title: 'Minha Barbearia',
+      url: '/minha-barbearia',
+      icon: 'cut'
     }
   ];
 

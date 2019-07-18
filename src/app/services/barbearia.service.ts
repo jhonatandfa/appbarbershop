@@ -24,6 +24,10 @@ export class BarbeariaService {
       )
   }
 
+  utpate(user: Barbearia, key:string){
+    this.bd.object<Barbearia>("barbearias/"+key).update(user);
+  }
+
   get(key:string){
     return this.bd.object<Barbearia>("barbearias/"+key).valueChanges()
   }

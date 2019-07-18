@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <ion-toolbar class="bgtitle">
+        <ion-title class="title">Adicionar serviços</ion-title>
+    </ion-toolbar>
+    <ion-item>
+        <ion-label position="stacked">Serviço <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
+      </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Preco <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="text" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
+            </ion-item>
+   
+              <br>
+          <ion-button color="dark" (click)=confirmBarber()>CADASTRAR</ion-button>
+          <ion-button color="danger">CANCELAR</ion-button>
+              
+          <ion-content padding >
+            <div class="map" id="map_canvas" (click) = "pegaLocal()">
+          </div>
+
+</ion-content>

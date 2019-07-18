@@ -20,7 +20,10 @@ const routes: Routes = [
   { path: 'config', loadChildren: './config/config.module#ConfigPageModule', canActivate: [AuthGuard]},
   { path: 'barbearia/:id', loadChildren: './barbearia/barbearia.module#BarbeariaPageModule' },
   { path: 'agendamento', loadChildren: './agendamento/agendamento.module#AgendamentoPageModule' },
-  { path: 'editar-perfil', loadChildren: './editar-perfil/editar-perfil.module#EditarPerfilPageModule' }
+  { path: 'editar-perfil', loadChildren: './editar-perfil/editar-perfil.module#EditarPerfilPageModule' },  { path: 'minha-barbearia', loadChildren: './minha-barbearia/minha-barbearia.module#MinhaBarbeariaPageModule' },
+  { path: 'editar-barbearia', loadChildren: './minha_barbearia/editar-barbearia/editar-barbearia.module#EditarBarbeariaPageModule' },
+  { path: 'add-service', loadChildren: './add-service/add-service.module#AddServicePageModule' }
+
 
 
 

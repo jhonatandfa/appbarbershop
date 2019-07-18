@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-toolbar class="title">
+        <ion-title class="title">Perfil Barbearia</ion-title>
+    </ion-toolbar>
+    <ion-button shape="round" color="dark" fill="outline" (click)="goAddServico()">Add Serviço</ion-button>
+    <ion-toolbar class="title">
+        <ion-title class="title">Editar Barbearia</ion-title>
+    </ion-toolbar>
+    <ion-item>
+        <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" name="nome" autofocus [(ngModel)]="barbearia.nome"></ion-input>
+      </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Nome do Barbeiro <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="text" name="nomeBarber" [(ngModel)]="barbearia.nomeBarber"></ion-input>
+            </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Telefone <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number" max="8"  name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Horário de abertura <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input type="time" name="horaAbert" [(ngModel)]="barbearia.horarioAbert"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Horário de fechamento <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="time" name="horaFecha" [(ngModel)]="barbearia.horarioFecha"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Endereco <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="text" name="endereco" [(ngModel)]="barbearia.endereco"></ion-input>
+              </ion-item>
+              <br>
+          <ion-button color="dark" (click)=confirmBarber()>Salvar Alterações</ion-button>
+          <ion-button color="danger">CANCELAR</ion-button>
+              
+          <!-- <ion-content padding >
+            <div class="map" id="map_canvas" (click) = "pegaLocal()">
+          </div>
+          </ion-content> -->
+</ion-content>
