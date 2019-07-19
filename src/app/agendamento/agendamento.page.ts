@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Agendamento } from '../entities/agendamento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agendamento',
@@ -12,7 +13,7 @@ export class AgendamentoPage implements OnInit {
   private d2 = new Date('2017-01-19 16:00:00').getHours();
   public cor:string = "";
   public hours:any = [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     while(this.d1.getHours() < this.d2){
@@ -36,5 +37,9 @@ export class AgendamentoPage implements OnInit {
 
  getCorHour(){
    this.cor = ".fundo1";
+ }
+
+ goConfirmar(){
+  this.router.navigateByUrl('/confirma-agendamento');
  }
 }

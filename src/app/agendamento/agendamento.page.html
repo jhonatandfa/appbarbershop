@@ -29,12 +29,6 @@
   </ion-item>
 </ion-list>
 
-<ion-item>
-  <ion-label>Horário:</ion-label>
-  <ion-select (ionChange)="getService($event)" placeholder="Select One">
-    <ion-select-option [ngClass]="cor" (click)="getCorHour()" *ngFor="let hour of hours" (click)="getHora(hour)" min="2018-12-19" value="" name="myDate">{{hour | date: 'HH:mm' }}</ion-select-option>
-  </ion-select>
-</ion-item>
 
 
   <ion-toolbar class="title">
@@ -44,16 +38,11 @@
     <ion-radio-group>
       <ion-item [ngClass]="cor" (click)="getCorHour()" *ngFor="let hour of hours" (click)="getHora(hour)">
         <ion-label class="label" min="2018-12-19" value="" name="myDate">{{hour | date: 'HH:mm' }}</ion-label>
-        <!-- <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio> -->
+        <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
 
+  <ion-button color="dark" (click)="goConfirmar()" expand="full">Continuar</ion-button>
 
-  <ion-item>
-    <ion-label>Horário:</ion-label>
-    <ion-select placeholder="Select One">
-      <ion-select-option [ngClass]="cor" (click)="getCorHour()" *ngFor="let hour of hours" (click)="getHora(hour)" min="2018-12-19" value="" name="myDate">{{hour | date: 'HH:mm' }}</ion-select-option>
-    </ion-select>
-  </ion-item>
 </ion-content>

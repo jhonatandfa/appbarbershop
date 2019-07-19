@@ -14,7 +14,7 @@ import { Platform, ToastController } from '@ionic/angular';
 import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
- 
+
 
 @Component({
   selector: 'app-register-barber',
@@ -27,13 +27,13 @@ export class RegisterBarberPage implements OnInit {
   posLat: number = -22.9035;
   posLon: number = -43.2096;
   zoom: number = 15;
-  barbearia:Barbearia;
+  barbearia: Barbearia;
 
-  user:any;
+  user: any = "teste";
   constructor(private platform: Platform,
     private ToastCtrl: ToastController,
-     private barberService: BarbeariaService,
-     private AuthService: AngularFireAuth) {
+    private barberService: BarbeariaService,
+    private AuthService: AngularFireAuth) {
   }
   async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
@@ -41,17 +41,17 @@ export class RegisterBarberPage implements OnInit {
     this.barbearia = new Barbearia();
     await this.platform.ready();
     await this.loadMap();
-    this.user = this.AuthService.user
+
+   
   }
 
 
-  confirmBarber(){
-     
-      this.registerBarber();
-  }
-
-  registerBarber(){
-    this.barberService.save(this.barbearia,this.user.uid);
+  register(){
+    this.AuthService.user.subscribe(
+      res=> 
+      this.barberService.save(this.barbearia, res.uid)
+    )
+    
   }
 
 
