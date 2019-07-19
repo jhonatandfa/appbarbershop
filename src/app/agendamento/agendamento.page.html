@@ -37,7 +37,7 @@
   <ion-list>
     <ion-radio-group>
       <ion-item [ngClass]="cor" (click)="getCorHour()" *ngFor="let hour of hours" (click)="getHora(hour)">
-        <ion-label class="label" min="2018-12-19" value="" name="myDate">{{hour | date: 'HH:mm' }}</ion-label>
+        <ion-label class="label" min="2018-12-19" value="agendamento.horaDoAgendamento" name="horaDoAgendamento">{{hour | date: 'HH:mm' }}</ion-label>
         <ion-radio slot="start" value="{{hour | date: 'HH:mm' }}" ></ion-radio>
       </ion-item>
     </ion-radio-group>

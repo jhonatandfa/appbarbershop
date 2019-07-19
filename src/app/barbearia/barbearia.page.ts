@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarbeariaService } from '../services/barbearia.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-barbearia',
@@ -19,6 +19,11 @@ public barbearia$:any;
   }
 
   goAgendamento(){
-    this.router.navigateByUrl('/agendamento');
+    let navigateExtras:NavigationExtras = {
+      state: {
+        obj : this.route.snapshot.paramMap.get('id')
+      }
+    }
+    this.router.navigateByUrl('/agendamento', navigateExtras);
   }
 }

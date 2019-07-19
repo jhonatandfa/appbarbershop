@@ -14,6 +14,7 @@ export class MinhaBarbeariaPage implements OnInit {
   }
 
   goEditarBarbearia(){
-    this.route.navigateByUrl('/editar-barbearia');
+    
+    this.route.navigateByUrl('/editar-barbearia',);
   }
 }
