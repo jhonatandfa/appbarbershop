@@ -23,7 +23,6 @@ export class ConfirmaAgendamentoPage implements OnInit {
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
         this.agendamento = getNav.extras.state.obj;
-        console.log(this.agendamento)
       }
 
     });
