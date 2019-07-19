@@ -44,6 +44,7 @@ export class AgendamentoPage implements OnInit {
 
   getHora(e){
     this.agendamento.horaDoAgendamento = e;
+    console.log(e)
   }
 
  getCorHour(){
@@ -51,6 +52,7 @@ export class AgendamentoPage implements OnInit {
  }
 
  goConfirmar(){
+   this.agendamento.momento = new Date().getUTCFullYear();
    console.log(this.agendamento)
   let navigationExtras: NavigationExtras = {
     state: {
