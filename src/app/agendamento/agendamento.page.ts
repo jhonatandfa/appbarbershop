@@ -52,7 +52,7 @@ export class AgendamentoPage implements OnInit {
  }
 
  goConfirmar(){
-   this.agendamento.momento = new Date().getUTCFullYear();
+   this.agendamento.momento = new Date().getMilliseconds();
    console.log(this.agendamento)
   let navigationExtras: NavigationExtras = {
     state: {
