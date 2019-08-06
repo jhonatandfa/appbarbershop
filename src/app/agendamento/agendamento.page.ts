@@ -13,6 +13,13 @@ export class AgendamentoPage implements OnInit {
   private d2 = new Date('2017-01-19 16:00:00').getHours();
   public cor:string = "";
   public hours:any = [];
+  public $arrs = [
+    "Maquina",
+    "Tesouro",
+    "Barba",
+    "Reflexo"
+  ];
+  
   constructor(private router: Router) { }
 
   ngOnInit() {

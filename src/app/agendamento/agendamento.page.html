@@ -11,12 +11,11 @@
   <ion-toolbar class="title">
     <ion-title>Agendamento</ion-title>
   </ion-toolbar>
-  <ion-list>
+  <ion-list>        
     <ion-item>
       <ion-label>Serviço:</ion-label>
       <ion-select (ionChange)="getService($event)"  placeholder="Select One">
-        <ion-select-option value="f" >Feminino</ion-select-option>
-        <ion-select-option value="m">Masculino</ion-select-option>
+          <ion-select-option *ngFor="let $arr of $arrs">{{$arr}}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
