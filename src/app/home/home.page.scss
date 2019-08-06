@@ -3,7 +3,7 @@
     margin-bottom: 10px;
 
     img{
-    width: 75px;
+    max-width: 75px;
     height: 75px;
     display: block;
     border-radius: 50px;
@@ -13,11 +13,13 @@
 }
 
 .col-8 p {
-    margin-bottom: 0;    
+    margin-bottom: 0;   
+    font-size: 16px;
 }
 
 div.col-8{
     padding-left: 0;
+
 
     .small{
         position: relative;
@@ -42,6 +44,7 @@ div.col-8{
     margin-bottom: 0;
     font-weight: bold;
     color: #313131;
+    padding: 0;
 }
 
 .barbearia {
@@ -60,7 +63,7 @@ ion-content{
 
 
 .col-8 h3 {
-    font-size: 20px;
+    font-size: 17px;
     font-family: custom !important;
     font-weight: bold;
     color: #313131;
@@ -73,7 +76,12 @@ ion-content{
     text-align: right;
 }
 
-.text {
+p.endereco {
+    font-size: 12px !important; 
+}
+
+p.text {
     text-align: right;
     color: green;
+    
 }

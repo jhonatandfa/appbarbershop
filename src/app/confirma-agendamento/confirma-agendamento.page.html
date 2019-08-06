@@ -1,9 +1,41 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>confirma-agendamento</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+    
+    <ion-toolbar class="title">
+      <ion-title>Detalhes</ion-title>
+    </ion-toolbar>
+    <div  *ngIf="barbearia$ |async as barbearia">
+        <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342">
+            </ion-avatar>
+            <ion-label>
+              <h2 class="label"> {{barbearia.nome}}</h2>
+              <h3 class="label">Barbeiro: {{barbearia.nomeBarber}}</h3>
+              <p class="label">{{barbearia.endereco}}</p>
+            </ion-label>
+          </ion-item>
+    </div>
+  <ion-list>
+      <ion-item>
+          <ion-label class="label" min="2018-12-19" >
+            Momento: {{agendamento.momento | date: 'dd/MM/yyyy HH:mm' }}</ion-label>
+        </ion-item>
+    <ion-item>
+      <ion-label class="label" value="agendamento.dataDoAgendamento" name="dataDoAgendamento">Data: {{agendamento.dataDoAgendamento | date: 'dd/MM/yyyy'}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label" (click)="getHora($event)">
+        Horário: {{agendamento.horaDoAgendamento | date: 'HH:mm' }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button color="dark" (click)="confirmar()" expand="full">Confirmar</ion-button>
 </ion-content>

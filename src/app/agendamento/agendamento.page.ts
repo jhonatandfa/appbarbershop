@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Agendamento } from '../entities/agendamento';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agendamento',
@@ -13,14 +13,18 @@ export class AgendamentoPage implements OnInit {
   private d2 = new Date('2017-01-19 16:00:00').getHours();
   public cor:string = "";
   public hours:any = [];
-  public $arrs = [
-    "Maquina",
-    "Tesouro",
-    "Barba",
-    "Reflexo"
-  ];
-  
-  constructor(private router: Router) { }
+  constructor(private router:Router,
+    
+    private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      let getNav = this.router.getCurrentNavigation();
+      if (getNav.extras.state) {
+        this.agendamento.idBarbearia = getNav.extras.state.obj;
+        console.log(this.agendamento.idBarbearia)
+      }
+
+    });
+  }
 
   ngOnInit() {
     while(this.d1.getHours() < this.d2){
@@ -40,6 +44,7 @@ export class AgendamentoPage implements OnInit {
 
   getHora(e){
     this.agendamento.horaDoAgendamento = e;
+    console.log(e)
   }
 
  getCorHour(){
@@ -47,6 +52,13 @@ export class AgendamentoPage implements OnInit {
  }
 
  goConfirmar(){
-  this.router.navigateByUrl('/confirma-agendamento');
+   this.agendamento.momento = new Date().getMilliseconds();
+   console.log(this.agendamento)
+  let navigationExtras: NavigationExtras = {
+    state: {
+    obj : this.agendamento
+    }
+  }
+  this.router.navigateByUrl('/confirma-agendamento', navigationExtras);
  }
 }

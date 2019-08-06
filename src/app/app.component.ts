@@ -16,18 +16,30 @@ export class AppComponent {
   nome:string = "Jhonatan";
   public user:Usuario = new Usuario();
   key:any;
+  public inicial = [];
+  nome1:string;
+  sobrenome:string;
 
   ngOnInit() {
     this.AuthService.user.subscribe(
       res=>{
         this.key = res.uid;
        this.userService.get(res.uid).subscribe(
-         u => this.user = u
+         u => {
+           this.user = u
+         this.getInit()
+         }
        )
       }  
       )
   }
 
+getInit(){
+  this.inicial = this.user.nome.split(" ", 2); 
+  console.log(this.user.nome)
+  this.nome1 = this.inicial[0].charAt(0).toUpperCase();
+  this.sobrenome = this.inicial[1].charAt(0).toUpperCase();
+}
 
   public appPages = [
     {

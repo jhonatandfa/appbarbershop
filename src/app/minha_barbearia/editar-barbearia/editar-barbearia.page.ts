@@ -19,17 +19,19 @@ export class EditarBarbeariaPage implements OnInit {
   constructor(private route:Router, 
     public barbeariaService:BarbeariaService,
     public AuthService: AngularFireAuth,
-    private userService:UsersService) { }
+    private userService:UsersService) {
+
+      this.AuthService.user.subscribe(
+        res=>{
+          this.key = res.uid;
+         this.barbeariaService.get(this.key).subscribe(
+           u => this.barbearia = u
+         )
+        }  
+        )
+     }
 
   ngOnInit() {
-    this.AuthService.user.subscribe(
-      res=>{
-        this.key = res.uid;
-       this.barbeariaService.get(this.key).subscribe(
-         u => this.barbearia = u
-       )
-      }  
-      )
   }
 
   goAddServico(){
