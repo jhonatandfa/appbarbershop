@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content class="" padding>
     <ion-toolbar class="bgtitle">
-        <ion-title class="title">Cadastre sua barbearia</ion-title>
+        <ion-title class="title">Nova Barbearia</ion-title>
     </ion-toolbar>
     <ion-item>
         <ion-label position="stacked">Nome da Barbearia <ion-text color="danger">*</ion-text></ion-label>
@@ -34,6 +34,14 @@
                 <ion-label position="stacked">Endereco <ion-text color="danger">*</ion-text></ion-label>
                 <ion-input type="text" name="endereco" [(ngModel)]="barbearia.endereco"></ion-input>
               </ion-item>
+              <ion-list>             
+                <ion-item>
+                  <ion-label>Add Serviços</ion-label>
+                  <ion-select [compareWith]="compareWith">
+                    <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
               <br>
           <ion-button color="dark" (click)="register()">CADASTRAR</ion-button>
           <ion-button color="danger">CANCELAR</ion-button>

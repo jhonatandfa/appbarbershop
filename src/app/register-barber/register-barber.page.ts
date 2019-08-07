@@ -14,6 +14,7 @@ import { Platform, ToastController } from '@ionic/angular';
 import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Servico } from '../entities/servico';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class RegisterBarberPage implements OnInit {
   posLon: number = -43.2096;
   zoom: number = 15;
   barbearia: Barbearia;
-
+  public servicos:Servico = new Servico();
   user: any = "teste";
   constructor(private platform: Platform,
     private ToastCtrl: ToastController,
@@ -39,6 +40,7 @@ export class RegisterBarberPage implements OnInit {
     // Since ngOnInit() is executed before `deviceready` event,
     // you have to wait the event.
     this.barbearia = new Barbearia();
+    
     await this.platform.ready();
     await this.loadMap();
 

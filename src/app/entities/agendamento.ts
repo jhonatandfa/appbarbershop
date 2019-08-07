@@ -1,3 +1,5 @@
+import {Servico } from './servico';
+
 export class Agendamento {
     key:string;
     momento:number;
@@ -5,6 +7,6 @@ export class Agendamento {
     horaDoAgendamento:string;
     idCliente:string;
     idBarbearia;
-    servico:string;
+    servico:string[] = [];
     status:string;
 }

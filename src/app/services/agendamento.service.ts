@@ -11,6 +11,6 @@ export class AgendamentoService {
 
   
   save(agendamento: Agendamento, key:string){
-    return this.bd.object("agendamentos/"+key).set(agendamento);
+    return this.bd.list("agendamentos/"+key).push(agendamento);
   }
 }

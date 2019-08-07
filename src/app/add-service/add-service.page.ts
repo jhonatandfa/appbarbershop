@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { ServicoService } from '../services/servico.service';
+import { Servico } from '../entities/servico';
 
 @Component({
   selector: 'app-add-service',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddServicePage implements OnInit {
 
-  constructor() { }
+  public service = new Servico();
+  constructor(private AuthService: AngularFireAuth,
+    public agendamentoSerivce:ServicoService) { }
 
   ngOnInit() {
   }
 
+  addService(){
+        this.agendamentoSerivce.save(this.service);
+      
+  }
 }
