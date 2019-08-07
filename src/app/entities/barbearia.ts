@@ -8,4 +8,5 @@ export class Barbearia {
     endereco:string;
     status:boolean;
     lng:string;
+    lat:string;
 }

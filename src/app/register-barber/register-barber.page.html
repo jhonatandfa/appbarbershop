@@ -36,9 +36,9 @@
               </ion-item>
               <ion-list>             
                 <ion-item>
-                  <ion-label>Add Serviços</ion-label>
-                  <ion-select [compareWith]="compareWith">
-                    <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+                  <ion-label>Nossos Serviços</ion-label>
+                  <ion-select [compareWith]="compareWith" *ngIf="servicos |async as servis" multiple="true">
+                    <ion-select-option *ngFor="let s of servis">{{s.nome}}</ion-select-option>
                   </ion-select>
                 </ion-item>
               </ion-list>
@@ -48,6 +48,6 @@
               
           <ion-content padding >
             <div class="map" id="map_canvas" (click) = "pegaLocal()">
-          </div>
+          </div> 
           </ion-content>
 </ion-content>

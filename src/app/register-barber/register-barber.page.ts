@@ -15,6 +15,7 @@ import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Servico } from '../entities/servico';
+import { ServicoService } from '../services/servico.service';
 
 
 @Component({
@@ -29,21 +30,24 @@ export class RegisterBarberPage implements OnInit {
   posLon: number = -43.2096;
   zoom: number = 15;
   barbearia: Barbearia;
-  public servicos:Servico = new Servico();
+  public servicos:any;
+
   user: any = "teste";
   constructor(private platform: Platform,
     private ToastCtrl: ToastController,
     private barberService: BarbeariaService,
-    private AuthService: AngularFireAuth) {
+    private AuthService: AngularFireAuth,
+    public servicoService:ServicoService) {
   }
   async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
     // you have to wait the event.
     this.barbearia = new Barbearia();
     
+    this.servicos =  this.servicoService.getAll();
     await this.platform.ready();
     await this.loadMap();
-
+    console.log(this.servicos) 
    
   }
 
