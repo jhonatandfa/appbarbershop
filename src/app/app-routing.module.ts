@@ -18,12 +18,13 @@ const routes: Routes = [
   { path: 'register-barber', loadChildren: './register-barber/register-barber.module#RegisterBarberPageModule', canActivate: [AuthGuard]},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard]},
   { path: 'config', loadChildren: './config/config.module#ConfigPageModule', canActivate: [AuthGuard]},
-  { path: 'barbearia/:id', loadChildren: './barbearia/barbearia.module#BarbeariaPageModule' },
-  { path: 'agendamento', loadChildren: './agendamento/agendamento.module#AgendamentoPageModule' },
-  { path: 'editar-perfil', loadChildren: './editar-perfil/editar-perfil.module#EditarPerfilPageModule' },  { path: 'minha-barbearia', loadChildren: './minha-barbearia/minha-barbearia.module#MinhaBarbeariaPageModule' },
-  { path: 'editar-barbearia', loadChildren: './minha_barbearia/editar-barbearia/editar-barbearia.module#EditarBarbeariaPageModule' },
-  { path: 'add-service', loadChildren: './add-service/add-service.module#AddServicePageModule' },
-  { path: 'confirma-agendamento', loadChildren: './confirma-agendamento/confirma-agendamento.module#ConfirmaAgendamentoPageModule' }
+  { path: 'barbearia/:id', loadChildren: './barbearia/barbearia.module#BarbeariaPageModule', canActivate: [AuthGuard] },
+  { path: 'agendamento', loadChildren: './agendamento/agendamento.module#AgendamentoPageModule', canActivate: [AuthGuard] },
+  { path: 'editar-perfil', loadChildren: './editar-perfil/editar-perfil.module#EditarPerfilPageModule', canActivate: [AuthGuard] },
+  { path: 'minha-barbearia', loadChildren: './minha-barbearia/minha-barbearia.module#MinhaBarbeariaPageModule', canActivate: [AuthGuard] },
+  { path: 'editar-barbearia', loadChildren: './minha_barbearia/editar-barbearia/editar-barbearia.module#EditarBarbeariaPageModule',canActivate: [AuthGuard] },
+  { path: 'add-service', loadChildren: './add-service/add-service.module#AddServicePageModule', canActivate: [AuthGuard] },
+  { path: 'confirma-agendamento', loadChildren: './confirma-agendamento/confirma-agendamento.module#ConfirmaAgendamentoPageModule', canActivate: [AuthGuard] }
 
 
 
