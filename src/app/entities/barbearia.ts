@@ -1,3 +1,4 @@
+
 export class Barbearia {
     key:string;
     nome:string;
@@ -9,4 +10,5 @@ export class Barbearia {
     status:boolean;
     lng:string;
     lat:string;
+    servico: any[] = [];
 }

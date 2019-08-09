@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Agendamento } from '../entities/agendamento';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { BarbeariaService } from '../services/barbearia.service';
 
 @Component({
   selector: 'app-agendamento',
@@ -8,24 +9,23 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
   styleUrls: ['./agendamento.page.scss'],
 })
 export class AgendamentoPage implements OnInit {
+  public barbearia$:any;
   public agendamento = new Agendamento();
   private d1 = new Date('2017-01-19 10:00:00');
   private d2 = new Date('2017-01-19 16:00:00').getHours();
   public cor:string = "";
   public hours:any = [];
-  public $arrs = [
-    'Tesoura',
-    'Maquina',
-    'Reflexo'
-  ]
+  
+
   constructor(private router:Router,
-    
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private barberiaService:BarbeariaService) {
     this.route.queryParams.subscribe(params => {
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
         this.agendamento.idBarbearia = getNav.extras.state.obj;
-        console.log(this.agendamento.idBarbearia)
+        this.barbearia$ = this.barberiaService.get(this.agendamento.idBarbearia);
+        console.log(this.barbearia$)
       }
 
     });

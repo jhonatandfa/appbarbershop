@@ -33,9 +33,17 @@
       <ion-label class="label" value="agendamento.dataDoAgendamento" name="dataDoAgendamento">Data: {{agendamento.dataDoAgendamento | date: 'dd/MM/yyyy'}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label class="label" (click)="getHora($event)">
+      <ion-label class="label">
         Horário: {{agendamento.horaDoAgendamento | date: 'HH:mm' }}</ion-label>
     </ion-item>
+    <ion-item>
+      <ion-label class="label">
+        Serviço: {{servico}}</ion-label>
+    </ion-item>
+    <ion-item>
+    <ion-label class="label">
+      Preço: {{preco}}</ion-label>
+  </ion-item>
   </ion-list>
   <ion-button color="dark" (click)="confirmar()" expand="full">Confirmar</ion-button>
 </ion-content>

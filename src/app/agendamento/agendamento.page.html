@@ -14,8 +14,8 @@
   <ion-list>        
     <ion-item>
       <ion-label>Serviço:</ion-label>
-      <ion-select (ionChange)="getService($event)"  placeholder="Select One">
-          <ion-select-option *ngFor="let $arr of $arrs">{{$arr}}</ion-select-option>
+      <ion-select (ionChange)="getService($event)"  *ngIf="barbearia$ |async as barbearia" placeholder="Selecione...">
+          <ion-select-option *ngFor="let $arr of barbearia.servico">{{$arr.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="valor">R${{$arr.valor}}</span></ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>

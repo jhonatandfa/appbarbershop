@@ -31,6 +31,7 @@ export class RegisterBarberPage implements OnInit {
   zoom: number = 15;
   barbearia: Barbearia;
   public servicos:any;
+  servicosSelecionadas:any;
 
   user: any = "teste";
   constructor(private platform: Platform,
@@ -51,11 +52,22 @@ export class RegisterBarberPage implements OnInit {
    
   }
 
+  getServices(){
+
+    this.servicosSelecionadas.forEach(e => {
+      let servico = e.split("+");
+      this.barbearia.servico.push({key: servico[0], nome:servico[1], valor: "0.0"})
+    });
+  }
 
   register(){
+    this.getServices()
     this.AuthService.user.subscribe(
       res=> 
-      this.barberService.save(this.barbearia, res.uid)
+      this.barberService.save(this.barbearia, res.uid).then( () => {
+        console.log(this.barbearia)
+        
+      })
     )
     
   }

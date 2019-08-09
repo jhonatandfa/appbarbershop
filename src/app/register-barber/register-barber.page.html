@@ -37,12 +37,13 @@
               <ion-list>             
                 <ion-item>
                   <ion-label>Nossos Serviços</ion-label>
-                  <ion-select [compareWith]="compareWith" *ngIf="servicos |async as servis" multiple="true">
-                    <ion-select-option *ngFor="let s of servis">{{s.nome}}</ion-select-option>
+                  <ion-select [compareWith]="compareWith" name="servicosSelecionadas" [(ngModel)]="servicosSelecionadas" *ngIf="servicos |async as servis" multiple="true">
+                    <ion-select-option *ngFor="let s of servis"  value="{{s.key}}+{{s.nome}}">{{s.nome}}</ion-select-option>
                   </ion-select>
                 </ion-item>
               </ion-list>
               <br>
+              {{servicosSelecionadas}}
           <ion-button color="dark" (click)="register()">CADASTRAR</ion-button>
           <ion-button color="danger">CANCELAR</ion-button>
               
