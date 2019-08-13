@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { Usuario } from '../entities/usuario';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -16,7 +16,7 @@ export class EditarPerfilPage implements OnInit {
   public user:Usuario = new Usuario();
   
   key:any;
-  constructor(private userService:UsersService,
+  constructor(private route:Router, private userService:UsersService,
     public AuthService: AngularFireAuth) { 
     }
 
@@ -31,7 +31,13 @@ export class EditarPerfilPage implements OnInit {
       )
   }
 
+  
+
   salvarAlteracoes(){
     this.userService.utpate(this.user, this.key);
+  }
+
+  goBack(){
+    this.route.navigateByUrl('/home');
   }
 }
