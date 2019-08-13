@@ -18,17 +18,13 @@
               <img src="https://cdn.shopify.com/s/files/1/0408/8473/articles/header_10-barbearias_2048x.jpg?v=1537831342">
             </ion-avatar>
             <ion-label>
-              <h2 class="label"> {{barbearia.nome}}</h2>
-              <h3 class="label">Barbeiro: {{barbearia.nomeBarber}}</h3>
-              <p class="label">{{barbearia.endereco}}</p>
+              <h2 class="label"><ion-icon name="cut"></ion-icon>{{barbearia.nome}}</h2>
+              <h3 class="label"><ion-icon name="person"></ion-icon>{{barbearia.nomeBarber}}</h3>
+              <h4 class="label"><ion-icon name="pin"></ion-icon>{{barbearia.endereco}}</h4>
             </ion-label>
           </ion-item>
     </div>
   <ion-list>
-      <ion-item>
-          <ion-label class="label" min="2018-12-19" >
-            Momento: {{agendamento.momento | date: 'dd/MM/yyyy HH:mm' }}</ion-label>
-        </ion-item>
     <ion-item>
       <ion-label class="label" value="agendamento.dataDoAgendamento" name="dataDoAgendamento">Data: {{agendamento.dataDoAgendamento | date: 'dd/MM/yyyy'}}</ion-label>
     </ion-item>
