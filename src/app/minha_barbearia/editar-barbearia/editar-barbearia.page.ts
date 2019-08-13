@@ -38,7 +38,7 @@ export class EditarBarbeariaPage implements OnInit {
     this.route.navigateByUrl('/add-service');
   }
 
-  goBack(){
+  goBack(){ //ir para home
     this.route.navigateByUrl('/home');
   }
   salvarAlteracoes(){
