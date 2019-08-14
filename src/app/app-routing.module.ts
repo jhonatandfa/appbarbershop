@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: 'minha-barbearia', loadChildren: './minha-barbearia/minha-barbearia.module#MinhaBarbeariaPageModule', canActivate: [AuthGuard] },
   { path: 'editar-barbearia', loadChildren: './minha_barbearia/editar-barbearia/editar-barbearia.module#EditarBarbeariaPageModule',canActivate: [AuthGuard] },
   { path: 'add-service', loadChildren: './add-service/add-service.module#AddServicePageModule', canActivate: [AuthGuard] },
-  { path: 'confirma-agendamento', loadChildren: './confirma-agendamento/confirma-agendamento.module#ConfirmaAgendamentoPageModule', canActivate: [AuthGuard] }
+  { path: 'confirma-agendamento', loadChildren: './confirma-agendamento/confirma-agendamento.module#ConfirmaAgendamentoPageModule', canActivate: [AuthGuard] },  { path: 'agenda', loadChildren: './agenda/agenda.module#AgendaPageModule' }
+
 
 
 

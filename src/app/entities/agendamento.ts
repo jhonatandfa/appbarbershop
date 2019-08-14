@@ -8,5 +8,5 @@ export class Agendamento {
     idCliente:string;
     idBarbearia;
     servico:string;;
-    status:string;
+    status:boolean = false;
 }

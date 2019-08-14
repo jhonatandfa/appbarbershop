@@ -10,7 +10,7 @@ export class AgendamentoService {
   constructor(private bd:AngularFireDatabase) { }
 
   
-  save(agendamento: Agendamento, key:string){
-    return this.bd.list("agendamentos/"+key).push(agendamento);
+  save(agendamento: Agendamento){
+    return this.bd.list("agendamentos").push(agendamento);
   }
 }
