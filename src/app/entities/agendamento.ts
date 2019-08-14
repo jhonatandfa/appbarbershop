@@ -6,7 +6,7 @@ export class Agendamento {
     dataDoAgendamento:string = "19/07/2019";
     horaDoAgendamento:string;
     idCliente:string;
-    idBarbearia;
+    idBarbearia:string;
     servico:string;;
     status:boolean = false;
 }

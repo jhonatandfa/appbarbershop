@@ -53,6 +53,11 @@ getInit(){
       icon: 'jet'
     },
     {
+      title: 'Lançamentos',
+      url: '/lancamento-cliente',
+      icon: 'construct'
+    },
+    {
       title: 'Configurações',
       url: '/config',
       icon: 'construct'

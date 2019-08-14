@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lancamentoCliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-item *ngIf="agendamentos$ | async; let ag"></ion-item>
+<li *ngFor="let a of ag">{{a.key}}</li>
+<ion-content>
+
+</ion-content>

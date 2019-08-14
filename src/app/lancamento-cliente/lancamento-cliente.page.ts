@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AgendaService } from '../services/agenda.service';
-import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'app-agenda',
-  templateUrl: './agenda.page.html',
-  styleUrls: ['./agenda.page.scss'],
+  selector: 'app-lancamento-cliente',
+  templateUrl: './lancamento-cliente.page.html',
+  styleUrls: ['./lancamento-cliente.page.scss'],
 })
-export class AgendaPage implements OnInit {
+export class LancamentoClientePage implements OnInit {
   public espera:any = [];
   public finalizado:any = [];
   public key: any;
@@ -21,7 +20,7 @@ export class AgendaPage implements OnInit {
     this.AuthService.user.subscribe(
       async res => {
         
-        this.agendamentos$ =  this.agendaService.getAll(res.uid);
+        this.agendamentos$ =  this.agendaService.pegarTodos(res.uid);
         console.log(this.agendamentos$)
       }
     )
