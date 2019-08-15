@@ -22,16 +22,12 @@ export class AgendaService {
   }
 
   pegarTodos(key) {
-    const size$ = new Subject<string>();
-    const queryObservable = size$.pipe(
-      switchMap(size =>
-        this.db.list('/agendamentos', ref => ref.orderByChild('idBarbearia').equalTo(size)).valueChanges()
-      )
-    );
-    queryObservable.subscribe(queriedItems => {
-      console.log(queriedItems);  
-    });
-
-    return size$.next(key);
+    // const size$ = new Subject<string>();
+    // return size$.pipe(
+    //   switchMap(size =>
+    //     this.db.list('agendamentos', ref => ref.orderByChild('idBarbearia').equalTo(size)).snapshotChanges()
+    //   )
+    // )
+    return this.db.list('agendamentos', ref => ref.orderByChild('idBarbearia').equalTo(key)).valueChanges()
   }
 }

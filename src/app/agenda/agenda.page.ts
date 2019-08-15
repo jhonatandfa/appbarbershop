@@ -9,20 +9,28 @@ import { Observable } from 'rxjs';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage implements OnInit {
-  public espera:any = [];
-  public finalizado:any = [];
+  public espera: any;
+  public finalizado: any = [];
   public key: any;
-   public  agendamentos$: any;
-   
+  public agendamentos$: any;
+
   constructor(public AuthService: AngularFireAuth,
     private agendaService: AgendaService) { }
 
-   ngOnInit() {
+  ngOnInit() {
     this.AuthService.user.subscribe(
-      async res => {
+      res => {
+        console.log(res.uid);
         
-        this.agendamentos$ =  this.agendaService.getAll(res.uid);
-        console.log(this.agendamentos$)
+         this.agendaService.pegarTodos(res.uid).subscribe(
+          data => {
+            console.log(data)
+            data.forEach( d => d[0])
+            
+            //console.log(this.espera[0].status)
+            
+          }
+        );
       }
     )
   }

@@ -13,15 +13,15 @@
       <ion-title class="title">Agenda</ion-title>
   </ion-toolbar>
 
-  <ion-list *ngIf="agendamentos$ |async as ag">
+  <ion-list *ngIf="espera">
   <ion-item >
     <ion-list-header class="title">
         Lista de Espera
       </ion-list-header>
     </ion-item>
 
-    <ion-item *ngFor="let espera of ag">
-        <ion-label>{{espera.servico}}</ion-label>
+    <ion-item *ngFor="let ag of espera">
+        <ion-label>{{ag.servico}}</ion-label>
     </ion-item>
     
   </ion-list>
