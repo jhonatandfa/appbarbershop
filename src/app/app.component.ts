@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -12,8 +12,7 @@ import { UsersService } from './services/users.service';
   templateUrl: 'app.component.html',
 })
 
-export class AppComponent {
-  nome:string = "Jhonatan";
+export class AppComponent  implements OnInit{
   public user:Usuario = new Usuario();
   key:any;
   public inicial = [];
@@ -27,7 +26,7 @@ export class AppComponent {
        this.userService.get(res.uid).subscribe(
          u => {
            this.user = u
-         this.getInit()
+           this.ngOnInit();
          }
        )
       }  
@@ -36,7 +35,6 @@ export class AppComponent {
 
 getInit(){
   this.inicial = this.user.nome.split(" ", 2); 
-  console.log(this.user.nome)
   this.nome1 = this.inicial[0].charAt(0).toUpperCase();
   this.sobrenome = this.inicial[1].charAt(0).toUpperCase();
 }
@@ -76,7 +74,7 @@ getInit(){
     public AuthService: AngularFireAuth,
     private userService:UsersService
   ) {
-    this.ngOnInit();
+    
     this.initializeApp();
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -7,7 +7,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage  implements OnInit{
+  ngOnInit(): void {
+    this.listBarber();
+    
+  }
   public barbearias$:any;
   public user$:any;
  // public barbearia:Barbearia = new Barbearia();
@@ -15,7 +19,6 @@ export class HomePage {
   key:any;
   constructor(private barberiaService:BarbeariaService, 
     ) {
-    this.listBarber();
   }
 
   listBarber(){

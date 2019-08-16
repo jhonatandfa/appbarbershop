@@ -10,31 +10,40 @@
 <ion-content padding>
 
   <ion-toolbar class="bgtitle">
-      <ion-title class="title">Agenda</ion-title>
+      <ion-title class="title">Agendamentos</ion-title>
   </ion-toolbar>
 
-  <ion-list *ngIf="espera">
+  <div *ngIf="espera">
   <ion-item >
     <ion-list-header class="title">
-        Lista de Espera
+        Lista de Espera N°: {{espera.length}}
       </ion-list-header>
     </ion-item>
 
-    <ion-item *ngFor="let ag of espera">
-        <ion-label>{{ag.servico}}</ion-label>
-    </ion-item>
-    
-  </ion-list>
-  <ion-list *ngIf="agendamentos$ |async as ag">
+    <div *ngFor="let ag of espera">
+      <p>Serviço: {{ag.servico}}</p>
+        <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
+        <ion-button (click)="finalizar(ag.key)" color="danger">Finalizar</ion-button>
+        <hr>
+      </div>
+    </div>
+    <p *ngIf="espera.length === 0">Sem resultados!</p>
+
+  <div *ngIf="finalizado">
       <ion-item >
         <ion-list-header class="title">
-            Lista de Espera
+            Lista de Finalizados
           </ion-list-header>
         </ion-item>
-  
-        <ion-item *ngFor="let finalizado of ag">
-            <ion-label>{{finalizado.servico}}</ion-label>
-        </ion-item>
         
-      </ion-list>
+    
+        <div *ngFor="let ags of finalizado">
+          <p >Serviço: {{ags.servico}}</p>
+            <p> Data e Hora: {{ags.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ags.horaDoAgendamento | date: 'HH:mm' }}</p>
+            
+            <hr>
+        </div>
+        
+      </div>
+      
 </ion-content>

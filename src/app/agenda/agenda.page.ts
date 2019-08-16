@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage implements OnInit {
-  public espera: any;
+  public espera: any = [];
   public finalizado: any = [];
   public key: any;
   public agendamentos$: any;
@@ -24,15 +24,21 @@ export class AgendaPage implements OnInit {
         
          this.agendaService.pegarTodos(res.uid).subscribe(
           data => {
-            console.log(data)
-            data.forEach( d => d[0])
+            this.espera = [];
+            this.finalizado = [];
+            data.forEach((value, index) => {
+              console.log(value['status'])
+              value['status'] === false ? this.espera.push(value) : this.finalizado.push(value)
+            })
             
-            //console.log(this.espera[0].status)
-            
-          }
+            }
         );
       }
     )
+  }
+
+  finalizar(key){
+    this.agendaService.finalizar(key)
   }
 
 }
