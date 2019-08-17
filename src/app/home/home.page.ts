@@ -12,6 +12,7 @@ export class HomePage  implements OnInit{
     this.listBarber();
     
   }
+  public status:boolean = false;
   public barbearias$:any;
   public user$:any;
  // public barbearia:Barbearia = new Barbearia();
@@ -23,8 +24,17 @@ export class HomePage  implements OnInit{
 
   listBarber(){
     this.barbearias$ = this.barberiaService.getAll();
+    
   }
   
+  status1(){
+    if(this.status === false){
+      return "Fechado Agora";
+    }else if(this.status === true){
+      return "Aberto Agora";
+    }
+  }
+
   doRefresh(event) {
     this.listBarber();
     setTimeout(() => {

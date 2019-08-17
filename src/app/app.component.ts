@@ -12,25 +12,26 @@ import { UsersService } from './services/users.service';
   templateUrl: 'app.component.html',
 })
 
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit{
   public user:Usuario = new Usuario();
   key:any;
-  public inicial = [];
-  nome1:string;
-  sobrenome:string;
+  public inicial:string[];
+  public nome1:string;
+  public sobrenome:string;
 
   ngOnInit() {
     this.AuthService.user.subscribe(
       res=>{
         this.key = res.uid;
-       this.userService.get(res.uid).subscribe(
+       this.userService.get(this.key).subscribe(
          u => {
+          
            this.user = u
-           this.ngOnInit();
-         }
-       )
-      }  
-      )
+           this.getInit();
+          }
+          )
+        }  
+        )
   }
 
 getInit(){
@@ -74,8 +75,8 @@ getInit(){
     public AuthService: AngularFireAuth,
     private userService:UsersService
   ) {
-    
     this.initializeApp();
+
   }
 
   initializeApp() {

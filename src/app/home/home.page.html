@@ -31,7 +31,7 @@
             <h3><ion-icon name="person"></ion-icon>{{barbearia.nomeBarber}}</h3>
             <span class="small"><ion-icon name="time"></ion-icon>{{barbearia.horarioAbert}} AM ás {{barbearia.horarioFecha}} PM</span>
             <span class="endereco"><ion-icon name="pin"></ion-icon> {{barbearia.endereco}}</span>
-            <p class="text ">Aberto agora</p>
+            <p name="status" [(ngModel)]="status" class="text">{{status1()}}</p>
           </div>
         </div>
       </div>

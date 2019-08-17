@@ -7,7 +7,7 @@ export class Barbearia {
     horarioFecha:string;
     telefone:string;
     endereco:string;
-    status:boolean;
+    status:boolean = false;
     lng:string;
     lat:string;
     servico: any[] = [];
