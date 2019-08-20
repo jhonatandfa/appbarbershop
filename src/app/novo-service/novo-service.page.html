@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <ion-toolbar class="bgtitle">
+        <ion-title class="title">Criar novo Serviço</ion-title>
+      </ion-toolbar>
+      <ion-item>
+          <ion-label position="stacked">Nome Do Serviço<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required type="text" [(ngModel)]="service.nome" (click)="addService()"></ion-input>
+        </ion-item>
+        <ion-button color="dark" (click)=addService()>Salvar Alterações</ion-button>
+        <ion-button color="danger" (click)=goBack()>Voltar</ion-button>
+        <br>
+        <h4>Serviços</h4>
+        <ul>
+          <li *ngFor="let s of services">{{s.nome}}</li>
+        </ul>
+</ion-content>

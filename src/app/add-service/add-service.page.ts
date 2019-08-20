@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ServicoService } from '../services/servico.service';
 import { Servico } from '../entities/servico';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
 
@@ -21,6 +21,7 @@ export class AddServicePage implements OnInit {
   constructor(private AuthService: AngularFireAuth,
     public agendamentoSerivce:ServicoService,
     private router: ActivatedRoute,
+    private route: Router,
     private barbeariaService:BarbeariaService,
 
     private serviceService:ServicoService) { }
@@ -59,6 +60,10 @@ export class AddServicePage implements OnInit {
   delete(service){
     this.services = this.services.filter((s) => s !== service)
     this.barbeariaService.attPreco(this.key, this.services)
+  }
+
+  newService(){
+    this.route.navigate(['/novo-service'])
   }
 
 
