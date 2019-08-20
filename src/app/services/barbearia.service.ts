@@ -34,7 +34,7 @@ export class BarbeariaService {
 
   openAndClosed(key, status:boolean){
     
-      this.bd.object('barbearias/'+key).update({status})
+      this.bd.object('barbearias/'+key).update({status: status})
     
   }
 }
