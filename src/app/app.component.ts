@@ -51,9 +51,9 @@ getInit(){
       icon: 'jet'
     },
     {
-      title: 'Lançamentos',
+      title: 'Meus agendamentos',
       url: '/lancamento-cliente',
-      icon: 'construct'
+      icon: 'stopwatch'
     },
     {
       title: 'Minha Barbearia',
