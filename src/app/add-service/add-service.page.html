@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-toolbar class="bgtitle">
     <ion-title class="title">Escolha os Serviços</ion-title>
   </ion-toolbar>
@@ -17,13 +18,19 @@
     <ion-input type="number" value="{{serviceSelected.preco}}" [(ngModel)]="serviceSelected.preco"><b>Preço:</b></ion-input>
     <ion-button color="dark" (click)=save()>Salvar Alterações</ion-button>
   </div>
-
   <div>
     <h4>Meus Serviços</h4>
     <ul *ngFor="let s of services">
       <li (click)="onSelect(s)">{{s.nome | uppercase }} - R$-{{s.preco}} </li><ion-button (click)="delete(s)" color="danger">Excluir</ion-button>
     </ul>
   </div>
+  <hr>
+  <ion-item>
+      <ion-button shape="round" color="dark" (click)="goAddServico()">Adicionar Serviços</ion-button>
+      <ion-button shape="round" color="dark" fill="outline" (click)="goAddServico()">Criar novo Serviço</ion-button>
+  </ion-item>
+ 
+
 
   
   <!-- <ion-item>
