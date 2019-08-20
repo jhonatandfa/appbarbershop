@@ -12,7 +12,7 @@
     </ion-toolbar>
     <br>
     <div *ngFor="let ag of agendamentos">
-        <p>Serviço: {{ag.servico}}</p>
+      <p *ngFor="let s of ag.servico">Serviço: {{s.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R$ {{s.preco}}</p>
           <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
           
           <hr>

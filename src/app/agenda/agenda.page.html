@@ -27,7 +27,7 @@
         <hr>
       </div>
     </div>
-    <p *ngIf="espera.length === 0">Sem resultados!</p>
+    <p *ngIf="espera.length === 0" class="text-center">Sem resultados!</p>
 
   <div *ngIf="finalizado">
       <ion-item >
@@ -38,7 +38,7 @@
         
     
         <div *ngFor="let ags of finalizado">
-          <p >Serviço: {{ags.servico}}</p>
+          <p *ngFor="let s of ags.servico">Serviço: {{s.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R$ {{s.preco}}</p>
             <p> Data e Hora: {{ags.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ags.horaDoAgendamento | date: 'HH:mm' }}</p>
             
             <hr>
