@@ -89,7 +89,9 @@ export class RegisterBarberPage implements OnInit {
     this.AuthService.user.subscribe(
       res=> 
       this.barberService.save(this.barbearia, res.uid).then( () => {
-        this.route.navigate(['/add-service', { key: res.uid }])        
+
+          this.route.navigate(['/add-service', { key: res.uid }])        
+
       })
     )
     
