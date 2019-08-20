@@ -18,13 +18,16 @@ export class AddServicePage implements OnInit {
   public service = new Servico();
   public v:number = 0.0 ;
   public serviceSelected:Servico;
+  public servicos:any;
+  public servicosSelecionadas:any;
   constructor(private AuthService: AngularFireAuth,
     public agendamentoSerivce:ServicoService,
     private router: ActivatedRoute,
     private route: Router,
     private barbeariaService:BarbeariaService,
-
-    private serviceService:ServicoService) { }
+    public servicoService:ServicoService,
+    private serviceService:ServicoService
+    ) { }
 
   ngOnInit() {
     this.AuthService.user.subscribe(
@@ -39,12 +42,25 @@ export class AddServicePage implements OnInit {
         )
       }
     );
-
+    this.servicos =  this.servicoService.getAll();
   }
 
   onSelect(obj){
     this.serviceSelected = obj;
     console.log(this.serviceSelected)
+  }
+
+  getServices(){
+    this.barbearia.servico = [];
+    this.servicosSelecionadas.forEach(e => {
+      let servico = e.split("+");
+      this.barbearia.servico.push({
+        key: servico[0],
+         nome:servico[1],
+        preco: 0.0})
+    });
+    this.barbeariaService.attPreco(this.key, this.barbearia.servico)
+    
   }
 
   save(){
