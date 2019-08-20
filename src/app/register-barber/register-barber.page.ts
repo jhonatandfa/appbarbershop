@@ -91,6 +91,7 @@ export class RegisterBarberPage implements OnInit {
       this.barberService.save(this.barbearia, res.uid).then( () => {
         this.presentAlert();
         this.route.navigate(['/add-service', { key: res.uid }])        
+
       })
     )
     

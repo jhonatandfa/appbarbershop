@@ -47,7 +47,13 @@ export class ConfirmaAgendamentoPage implements OnInit {
       () =>
         this.agendamentoSerivce.save(this.agendamento)
           .then(() => {
-            this.router.navigateByUrl('/barbearia/' + this.agendamento.idBarbearia);
+             //Colocar ALERT AQUIIIIIIIIIIIII
+
+             
+        setInterval(function(){
+          this.router.navigateByUrl('/barbearia/' + this.agendamento.idBarbearia);
+          
+        }, 3000);
           })
     )
   }

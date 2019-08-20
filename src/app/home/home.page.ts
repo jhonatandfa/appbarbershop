@@ -25,6 +25,11 @@ export class HomePage  implements OnInit{
   listBarber(){
     this.barbearias$ = this.barberiaService.getAll();
     this.status1()
+    this.barberiaService.getAll().subscribe(
+      data => {
+        console.log(data)
+      }
+    )
     
   }
   
