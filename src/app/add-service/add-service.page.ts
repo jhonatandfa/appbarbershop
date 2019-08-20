@@ -56,6 +56,10 @@ export class AddServicePage implements OnInit {
     this.barbeariaService.attPreco(this.key, this.services)
   }
 
+  delete(service){
+    this.services = this.services.filter((s) => s !== service)
+    this.barbeariaService.attPreco(this.key, this.services)
+  }
 
 
   addService(){

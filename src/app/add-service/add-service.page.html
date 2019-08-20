@@ -21,7 +21,7 @@
   <div>
     <h4>Meus Serviços</h4>
     <ul *ngFor="let s of services">
-      <li (click)="onSelect(s)">{{s.nome | uppercase }} - R$-{{s.preco}} </li><ion-button color="danger">Excluir</ion-button>
+      <li (click)="onSelect(s)">{{s.nome | uppercase }} - R$-{{s.preco}} </li><ion-button (click)="delete(s)" color="danger">Excluir</ion-button>
     </ul>
   </div>
 
