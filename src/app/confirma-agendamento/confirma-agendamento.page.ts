@@ -4,6 +4,7 @@ import { Agendamento } from '../entities/agendamento';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AgendamentoService } from '../services/agendamento.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-confirma-agendamento',
@@ -20,7 +21,7 @@ export class ConfirmaAgendamentoPage implements OnInit {
     private barbeariaService: BarbeariaService,
     private route: ActivatedRoute,
     public agendamentoSerivce: AgendamentoService,
-    private AuthService: AngularFireAuth) {
+    private AuthService: AngularFireAuth,private AlertCtrl: AlertController) {
     this.route.queryParams.subscribe(params => {
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
@@ -47,14 +48,21 @@ export class ConfirmaAgendamentoPage implements OnInit {
       () =>
         this.agendamentoSerivce.save(this.agendamento)
           .then(() => {
-             //Colocar ALERT AQUIIIIIIIIIIIII
-
-             
+            this.presentAlert();
         setInterval(function(){
           this.router.navigateByUrl('/barbearia/' + this.agendamento.idBarbearia);
           
         }, 3000);
           })
     )
+  }
+
+  async presentAlert() {
+    const alert = await this.AlertCtrl.create({
+      header: 'Agendamento realizado com sucesso!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
