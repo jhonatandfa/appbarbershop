@@ -11,5 +11,5 @@ export class Barbearia {
     status:boolean;
     lng:string;
     lat:string;
-    servico: Servico[];
+    servico: Servico[] = [];
 }
