@@ -13,8 +13,8 @@
   </ion-toolbar>
  
   <div class="form-service" *ngIf="serviceSelected">
-    <p><b>Serviço: </b> <span> {{serviceSelected.nome | uppercase }}</span></p>
-    <ion-input type="number" value="{{serviceSelected.preco}}"><b>Preço:</b></ion-input>
+    <p><b>Serviço: </b> {{serviceSelected.nome | uppercase }}</p>
+    <ion-input type="number" value="{{serviceSelected.preco}}" [(ngModel)]="serviceSelected.preco"><b>Preço:</b></ion-input>
     <ion-button color="dark" (click)=save()>Salvar Alterações</ion-button>
   </div>
 

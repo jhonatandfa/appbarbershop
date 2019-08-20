@@ -8,25 +8,31 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./lancamento-cliente.page.scss'],
 })
 export class LancamentoClientePage implements OnInit {
-  public espera:any = [];
-  public finalizado:any = [];
+  public espera: any = [];
+  public finalizado: any = [];
   public key: any;
-   public  agendamentos: any;
-   
+  public agendamentos: any;
+
   constructor(public AuthService: AngularFireAuth,
     private agendaService: AgendaService) { }
 
-   ngOnInit() {
+  ngOnInit() {
     this.AuthService.user.subscribe(
-       res => {
-      
-       this.agendaService.lacamento(res.uid).subscribe(
+      res => {
+
+        this.agendaService.lacamento(res.uid).subscribe(
           data => {
-            this.agendamentos = data
-            console.log(data)
+            this.espera = [];
+            this.finalizado = [];
+            data.forEach((value, index) => {
+              console.log(value['status'])
+              value['status'] === false ? this.espera.push(value) : this.finalizado.push(value)
+            })
+
           }
-        )
+        );
       }
+
     )
   }
 

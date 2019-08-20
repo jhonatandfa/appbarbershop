@@ -30,14 +30,16 @@
     <ion-input type="number" max="8" name="telefone" [(ngModel)]="barbearia.telefone"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Horário de abertura <ion-text color="danger">*</ion-text>
-    </ion-label>
-    <ion-input type="time" name="horaAbert" [(ngModel)]="barbearia.horarioAbert"></ion-input>
+    <ion-label position="stacked">Horário de Abertura<ion-text color="danger">*</ion-text></ion-label>
+    <ion-select (ionChange)="getHoraA($event)"   placeholder="Selecione...">
+        <ion-select-option   *ngFor="let hora of horas">{{hora}}</ion-select-option>
+    </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Horário de fechamento <ion-text color="danger">*</ion-text>
-    </ion-label>
-    <ion-input type="time" name="horaFecha" [(ngModel)]="barbearia.horarioFecha"></ion-input>
+    <ion-label position="stacked">Horário de Fechamento<ion-text color="danger">*</ion-text></ion-label>
+    <ion-select (ionChange)="getHoraF($event)"   placeholder="Selecione...">
+        <ion-select-option   *ngFor="let hora of horas">{{hora}}</ion-select-option>
+    </ion-select>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Endereco <ion-text color="danger">*</ion-text>

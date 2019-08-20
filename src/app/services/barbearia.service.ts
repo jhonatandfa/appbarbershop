@@ -37,4 +37,10 @@ export class BarbeariaService {
       this.bd.object('barbearias/'+key).update({status: status})
     
   }
+
+  attPreco(key, servicos){
+    
+    this.bd.object('barbearias/'+key).update({servico: servicos})
+  
+}
 }

@@ -11,11 +11,36 @@
         <ion-title class="title">Agendamentos</ion-title>
     </ion-toolbar>
     <br>
-    <div *ngFor="let ag of agendamentos">
+    <ion-item >
+      <ion-list-header class="title">
+          Lista de Não Finalizados
+        </ion-list-header>
+      </ion-item>
+    
+    <div *ngFor="let ag of espera">
       <p *ngFor="let s of ag.servico">Serviço: {{s.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R$ {{s.preco}}</p>
-          <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
-          
-          <hr>
+        <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
+        <ion-button (click)="finalizar(ag.key)" color="danger">Finalizar</ion-button>
+        <hr>
+      </div>
+    
+    <p *ngIf="espera.length === 0" class="text-center">Sem resultados!</p>
+
+  <div *ngIf="finalizado">
+      <ion-item >
+        <ion-list-header class="title">
+            Lista de Finalizados
+          </ion-list-header>
+        </ion-item>
+        
+    
+        <div *ngFor="let ags of finalizado">
+          <p *ngFor="let s of ags.servico">Serviço: {{s.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R$ {{s.preco}}</p>
+            <p> Data e Hora: {{ags.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ags.horaDoAgendamento | date: 'HH:mm' }}</p>
+            
+            <hr>
         </div>
+        
+      </div>
        
 </ion-content>

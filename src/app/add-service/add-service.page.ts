@@ -31,9 +31,9 @@ export class AddServicePage implements OnInit {
         this.key = res.uid
         this.barbeariaService.get(this.key).subscribe(
          data => {
-           // this.services = data['servico'];
+            this.barbearia = data
             this.services = data['servico'] 
-            
+            console.log(this.services)
          }
         )
       }
@@ -46,9 +46,17 @@ export class AddServicePage implements OnInit {
     console.log(this.serviceSelected)
   }
 
-  save(e){
-    
+  save(){
+   for(let s of this.services){
+     if(s.nome == this.serviceSelected.nome){
+       s.preco = this.serviceSelected.preco;
+       break;
+      }
+    }
+    this.barbeariaService.attPreco(this.key, this.services)
   }
+
+
 
   addService(){
         this.agendamentoSerivce.save(this.service);
