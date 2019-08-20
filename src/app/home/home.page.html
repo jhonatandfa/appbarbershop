@@ -31,7 +31,8 @@
             <h3><ion-icon name="person"></ion-icon>{{barbearia.nomeBarber}}</h3>
             <span class="small"><ion-icon name="time"></ion-icon>{{barbearia.horarioAbert}} AM ás {{barbearia.horarioFecha}} PM</span>
             <span class="endereco"><ion-icon name="pin"></ion-icon> {{barbearia.endereco}}</span>
-            <p name="status" (click)="status1(barbearia.status)" class="text">{{status1()}}</p>
+            <p name="status" *ngIf="barbearia.status === true" class="text">Aberto Agora</p>
+            <p name="status" *ngIf="barbearia.status !== true" class="text2">Fechado Agora</p>
           </div>
         </div>
       </div>

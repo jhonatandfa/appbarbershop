@@ -84,6 +84,7 @@ export class RegisterBarberPage implements OnInit {
   }
 
   register(){
+    this.barbearia.status = false
     this.getServices()
     this.AuthService.user.subscribe(
       res=> 
