@@ -12,26 +12,25 @@ import { UsersService } from './services/users.service';
   templateUrl: 'app.component.html',
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent  implements OnInit{
   public user:Usuario = new Usuario();
   key:any;
-  public inicial:string[];
-  public nome1:string;
-  public sobrenome:string;
+  public inicial = [];
+  nome1:string;
+  sobrenome:string;
 
   ngOnInit() {
     this.AuthService.user.subscribe(
       res=>{
         this.key = res.uid;
-       this.userService.get(this.key).subscribe(
+       this.userService.get(res.uid).subscribe(
          u => {
-          
            this.user = u
-           this.getInit();
-          }
-          )
-        }  
-        )
+         this.getInit()
+         }
+       )
+      }  
+      )
   }
 
 getInit(){
@@ -52,20 +51,20 @@ getInit(){
       icon: 'jet'
     },
     {
-      title: 'Meus agendamentos',
+      title: 'Lançamentos',
       url: '/lancamento-cliente',
-      icon: 'stopwatch'
+      icon: 'construct'
     },
-        {
-          title: 'Minha Barbearia',
-          url: '/minha-barbearia',
-          icon: 'cut'
-        },
     {
       title: 'Configurações',
       url: '/config',
       icon: 'construct'
     },
+    {
+      title: 'Minha Barbearia',
+      url: '/minha-barbearia',
+      icon: 'cut'
+    }
   ];
 
   constructor(
@@ -75,8 +74,8 @@ getInit(){
     public AuthService: AngularFireAuth,
     private userService:UsersService
   ) {
+    this.ngOnInit();
     this.initializeApp();
-
   }
 
   initializeApp() {
