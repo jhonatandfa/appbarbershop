@@ -25,7 +25,6 @@ export class LancamentoClientePage implements OnInit {
             this.espera = [];
             this.finalizado = [];
             data.forEach((value, index) => {
-              console.log(value['status'])
               value['status'] === false ? this.espera.push(value) : this.finalizado.push(value)
             })
 

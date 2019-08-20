@@ -30,7 +30,6 @@ export class MinhaBarbeariaPage implements OnInit {
   }
 
   openAndClosed(){
-    console.log(this.status)
     this.barbeariaService.openAndClosed(this.key,this.status)
   }
 

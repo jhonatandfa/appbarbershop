@@ -58,7 +58,7 @@ export class RegisterBarberPage implements OnInit {
     this.servicos =  this.servicoService.getAll();
     await this.platform.ready();
     await this.loadMap();
-    console.log(this.servicos) 
+     
    
   }
 
@@ -69,7 +69,7 @@ export class RegisterBarberPage implements OnInit {
 
   getHoraF(e){
     this.barbearia.horarioFecha = e.detail.value;
-    console.log(this.barbearia.horarioAbert);
+    
   }
 
   getServices(){
@@ -196,7 +196,7 @@ export class RegisterBarberPage implements OnInit {
     let options: GeocoderRequest = {
       address: this.endereco
     };
-    console.log(options);
+  
     // Address -> latitude,longitude
     Geocoder.geocode(options).then((results: GeocoderResult[]) => {
       console.log(results);
@@ -213,7 +213,7 @@ export class RegisterBarberPage implements OnInit {
         });
         marker.showInfoWindow();
       } else {
-        console.log("Not found");
+    
       }
     })
   }
@@ -237,7 +237,7 @@ export class RegisterBarberPage implements OnInit {
           })
           this.barbearia.lat = res[0].lat;
           this.barbearia.lng = res[0].lng;
-          console.log(this.barbearia);
+          
         }
 
       )
