@@ -3,6 +3,7 @@ import { Agendamento } from '../entities/agendamento';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Servico } from '../entities/servico';
 
 @Component({
   selector: 'app-agendamento',
@@ -18,7 +19,7 @@ export class AgendamentoPage implements OnInit {
   private d2;
   public cor:string = "";
   public hours:any = [];
-  
+  private s:Servico = new Servico();
 
   constructor(private router:Router,
     private route: ActivatedRoute,
@@ -57,8 +58,16 @@ export class AgendamentoPage implements OnInit {
     this.agendamento.dataDoAgendamento =  e.detail.value;
   }
   getService(e){
-    this.agendamento.servico = e.detail.value;
-//    console.log(this.agendamento.servico);
+    
+    let txt = e.detail.value;
+    let txt1 = txt.split("         ")
+    console.log(txt1)
+    this.s.key = null;
+    this.s.nome = txt1[0];
+    this.s.preco = parseFloat(txt1[1].replace("R$", ""));
+   this.agendamento['servico'].push(this.s);
+
+  console.log(this.s);
   }
 
   getHora(e){

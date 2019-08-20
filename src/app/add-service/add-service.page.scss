@@ -1,3 +1,8 @@
+
+* {
+  font-family: custom;
+}
+
 .title {
     --background: #313131;
     color: white;
@@ -6,3 +11,30 @@
   .label {
     text-align: center;
   } 
+
+  div.form-service {
+    margin-top: 5px;
+    background: #CFCFCF;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+ ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: #313131 solid 1px;
+  font-weight: bold;
+
+  overflow: hidden;
+ }
+
+ li:active {
+   background: #313131;
+   color: #CFCFCF;
+ }
+
+ h4 {
+   text-align: center;
+   
+ }

@@ -16,35 +16,38 @@ export class AddServicePage implements OnInit {
   public barbearia:Barbearia;
   public services:any;
   public service = new Servico();
+  public v:number = 0.0 ;
+  public serviceSelected:Servico;
   constructor(private AuthService: AngularFireAuth,
     public agendamentoSerivce:ServicoService,
     private router: ActivatedRoute,
     private barbeariaService:BarbeariaService,
+
     private serviceService:ServicoService) { }
 
   ngOnInit() {
-    this.key = this.router.snapshot.paramMap.get('key');
-    this.barbeariaService.get(this.key).subscribe(
-     data => {
-        this.barbearia = data;
+    this.AuthService.user.subscribe(
+      res => {
+        this.key = res.uid
+        this.barbeariaService.get(this.key).subscribe(
+         data => {
+           // this.services = data['servico'];
+            this.services = data['servico'] 
+            
+         }
+        )
+      }
+    );
 
-     //   this.services = data['servico'];
-        
-     }
-    )
+  }
 
-  this.serviceService.getAll().subscribe(
-    data => {
-      
-      this.services = data
-      
-    }
-  );
+  onSelect(obj){
+    this.serviceSelected = obj;
+    console.log(this.serviceSelected)
   }
 
   save(e){
-    console.log(e)
-    console.log(this.barbearia.servico)
+    
   }
 
   addService(){

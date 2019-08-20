@@ -33,12 +33,12 @@
         Horário: {{agendamento.horaDoAgendamento | date: 'HH:mm' }}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label class="label">
-        Serviço: {{servico}}</ion-label>
+      <ion-label class="label" *ngFor="let s of agendamento.servico">
+        Serviço: {{s.nome}}</ion-label>
     </ion-item>
     <ion-item>
-    <ion-label class="label">
-      Preço: {{preco}}</ion-label>
+    <ion-label class="label" *ngFor="let s of agendamento.servico">
+      Preço: {{s.preco}}</ion-label>
   </ion-item>
   </ion-list>
   <ion-button color="dark" (click)="confirmar()" expand="full">Confirmar</ion-button>

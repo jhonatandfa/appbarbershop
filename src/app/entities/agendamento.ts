@@ -1,12 +1,13 @@
+import { Servico } from './servico';
 
 
 export class Agendamento {
     key:string;
     momento:number;
-    dataDoAgendamento:string = "19/07/2019";
+    dataDoAgendamento:string;
     horaDoAgendamento:string;
     idCliente:string;
     idBarbearia:string;
-    servico:string;;
+    servico:Servico[] = [];
     status:boolean = false;
 }

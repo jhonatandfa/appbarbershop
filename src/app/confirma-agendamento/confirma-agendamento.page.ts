@@ -14,8 +14,7 @@ import { AlertController } from '@ionic/angular';
 export class ConfirmaAgendamentoPage implements OnInit {
   public agendamento: Agendamento = new Agendamento()
   key: any;
-  public servico: any;
-  public preco: any;
+ 
   public barbearia$: any;
   constructor(private router: Router,
     private barbeariaService: BarbeariaService,
@@ -23,20 +22,19 @@ export class ConfirmaAgendamentoPage implements OnInit {
     public agendamentoSerivce: AgendamentoService,
     private AuthService: AngularFireAuth
     , private AlertCtrl: AlertController) {
-    this.route.queryParams.subscribe(params => {
-      let getNav = this.router.getCurrentNavigation();
-      if (getNav.extras.state) {
-        this.agendamento = getNav.extras.state.obj;
-      }
-
+      this.route.queryParams.subscribe(params => {
+        let getNav = this.router.getCurrentNavigation();
+        if (getNav.extras.state) {
+          this.agendamento = getNav.extras.state.obj;
+          console.log(this.agendamento)
+        }
+      
     });
-  }
-
-  ngOnInit() {
-    this.barbearia$ = this.barbeariaService.get(this.agendamento.idBarbearia);
-    let txt = this.agendamento.servico.split("              ");
-    this.servico = txt[0];
-    this.preco = txt[1];
+    }
+    
+    ngOnInit() {
+      this.barbearia$ = this.barbeariaService.get(this.agendamento.idBarbearia);
+ 
   }
 
   confirmar() {

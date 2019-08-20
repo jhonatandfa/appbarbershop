@@ -1,28 +1,32 @@
 <ion-header>
-    <ion-toolbar color="dark">
-      <ion-buttons slot="start">
-        <ion-menu-button color="light"></ion-menu-button>
-      </ion-buttons>
-      <ion-title></ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
-    <ion-toolbar class="bgtitle">
-        <ion-title class="title">Escolha os Serviços</ion-title>
-    </ion-toolbar>
-    <ion-button  color="danger" size="small">Novo</ion-button>
-    <ion-item *ngFor="let s of services">
-        <ion-label position="stacked">Serviço <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" value="{{s.nome}}"></ion-input>
-        <ion-label position="stacked">Preço <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="number" value="{{s.preco}}"></ion-input>
-      </ion-item>
-      <ion-item>
-        </ion-item>
+  <ion-toolbar class="bgtitle">
+    <ion-title class="title">Escolha os Serviços</ion-title>
+  </ion-toolbar>
+ 
+  <div class="form-service" *ngIf="serviceSelected">
+    <p><b>Serviço: </b> <span> {{serviceSelected.nome | uppercase }}</span></p>
+    <ion-input type="number" value="{{serviceSelected.preco}}"><b>Preço:</b></ion-input>
+    <ion-button color="dark" (click)=save()>Salvar Alterações</ion-button>
+  </div>
 
-    <ion-button color="dark" (click)=save()>CADASTRAR</ion-button>
-    <!-- <ion-item>
+  <div>
+    <h4>Meus Serviços</h4>
+    <ul *ngFor="let s of services">
+      <li (click)="onSelect(s)">{{s.nome | uppercase }} - R$-{{s.preco}} </li><ion-button color="danger">Excluir</ion-button>
+    </ul>
+  </div>
+
+  
+  <!-- <ion-item>
         <ion-label position="stacked">Serviço <ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" name="nome" autofocus [(ngModel)]="service.nome"></ion-input>
       </ion-item>   
