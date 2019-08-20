@@ -38,7 +38,11 @@ export class ConfirmaAgendamentoPage implements OnInit {
   }
 
   confirmar(){
-    this.agendamento.servico.push
+    this.AuthService.user.subscribe(
+      res => {
+        this.agendamento.idCliente = res.uid;
+      }
+    )
     this.AuthService.user.subscribe(
       ()=> 
       this.agendamentoSerivce.save(this.agendamento)
