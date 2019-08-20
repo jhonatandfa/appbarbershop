@@ -52,20 +52,20 @@ getInit(){
       icon: 'jet'
     },
     {
-      title: 'Lançamentos',
+      title: 'Seus agendamentos',
       url: '/lancamento-cliente',
-      icon: 'construct'
+      icon: 'stopwatch'
     },
+        {
+          title: 'Minha Barbearia',
+          url: '/minha-barbearia',
+          icon: 'cut'
+        },
     {
       title: 'Configurações',
       url: '/config',
       icon: 'construct'
     },
-    {
-      title: 'Minha Barbearia',
-      url: '/minha-barbearia',
-      icon: 'cut'
-    }
   ];
 
   constructor(
