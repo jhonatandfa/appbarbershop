@@ -31,4 +31,10 @@ export class BarbeariaService {
   get(key:string){
     return this.bd.object<Barbearia>("barbearias/"+key).valueChanges()
   }
+
+  openAndClosed(key, status:boolean){
+    
+      this.bd.object('barbearias/'+key).update({status})
+    
+  }
 }

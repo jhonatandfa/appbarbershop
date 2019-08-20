@@ -21,7 +21,8 @@ export class ConfirmaAgendamentoPage implements OnInit {
     private barbeariaService: BarbeariaService,
     private route: ActivatedRoute,
     public agendamentoSerivce: AgendamentoService,
-    private AuthService: AngularFireAuth, private AlertCtrl: AlertController) {
+    private AuthService: AngularFireAuth
+    , private AlertCtrl: AlertController) {
     this.route.queryParams.subscribe(params => {
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {

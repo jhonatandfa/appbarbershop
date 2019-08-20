@@ -23,6 +23,6 @@
   </ion-item>
   <ion-item>
     <ion-label>Abrir/Fechar Barbearia</ion-label>
-    <ion-toggle color="danger" [(ngModel)]="sausage" ></ion-toggle>
+    <ion-toggle color="danger" (click)="openAndClosed()" [(ngModel)]="status" ></ion-toggle>
   </ion-item>
 </ion-content>
