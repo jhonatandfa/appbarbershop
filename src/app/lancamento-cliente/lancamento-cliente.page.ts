@@ -11,17 +11,21 @@ export class LancamentoClientePage implements OnInit {
   public espera:any = [];
   public finalizado:any = [];
   public key: any;
-   public  agendamentos$: any;
+   public  agendamentos: any;
    
   constructor(public AuthService: AngularFireAuth,
     private agendaService: AgendaService) { }
 
    ngOnInit() {
     this.AuthService.user.subscribe(
-      async res => {
-        
-        this.agendamentos$ =  this.agendaService.pegarTodos(res.uid);
-        console.log(this.agendamentos$)
+       res => {
+      
+       this.agendaService.lacamento(res.uid).subscribe(
+          data => {
+            this.agendamentos = data
+            console.log(data)
+          }
+        )
       }
     )
   }

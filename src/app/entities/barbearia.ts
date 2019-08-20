@@ -1,3 +1,4 @@
+import { Servico } from './servico';
 
 export class Barbearia {
     key:string;
@@ -10,5 +11,5 @@ export class Barbearia {
     status:boolean = false;
     lng:string;
     lat:string;
-    servico: any[] = [];
+    servico: Servico[];
 }

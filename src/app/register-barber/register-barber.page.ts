@@ -16,6 +16,7 @@ import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Servico } from '../entities/servico';
 import { ServicoService } from '../services/servico.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 
 @Component({
@@ -46,7 +47,8 @@ export class RegisterBarberPage implements OnInit {
     private ToastCtrl: ToastController,
     private barberService: BarbeariaService,
     private AuthService: AngularFireAuth,
-    public servicoService:ServicoService) {
+    public servicoService:ServicoService, 
+    private route: Router) {
   }
   async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
@@ -74,7 +76,10 @@ export class RegisterBarberPage implements OnInit {
 
     this.servicosSelecionadas.forEach(e => {
       let servico = e.split("+");
-      this.barbearia.servico.push({key: servico[0], nome:servico[1], valor: "0.0"})
+      this.barbearia.servico.push({
+        key: servico[0],
+         nome:servico[1],
+        preco: 0.0})
     });
   }
 
@@ -83,14 +88,13 @@ export class RegisterBarberPage implements OnInit {
     this.AuthService.user.subscribe(
       res=> 
       this.barberService.save(this.barbearia, res.uid).then( () => {
-        console.log(this.barbearia)
-        
+        this.route.navigate(['/add-service', { key: res.uid }])        
       })
     )
     
   }
 
-
+   
   async presentToast(message: string) {
     const toast = await this.ToastCtrl.create({
       message,

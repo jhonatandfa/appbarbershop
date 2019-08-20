@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Agendamento } from '../entities/agendamento';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { BarbeariaService } from '../services/barbearia.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-agendamento',
@@ -21,7 +22,10 @@ export class AgendamentoPage implements OnInit {
 
   constructor(private router:Router,
     private route: ActivatedRoute,
-    private barberiaService:BarbeariaService) {
+    private barberiaService:BarbeariaService,
+    public AuthService: AngularFireAuth
+    ) {
+      
       this.route.queryParams.subscribe(params => {
         let getNav = this.router.getCurrentNavigation();
         if (getNav.extras.state) {
@@ -67,6 +71,7 @@ export class AgendamentoPage implements OnInit {
  }
 
  goConfirmar(){
+   this.AuthService.user.subscribe( res => this.agendamento.idCliente = res.uid)
    this.agendamento.momento = new Date().getMilliseconds();
   // console.log(this.agendamento)
   let navigationExtras: NavigationExtras = {

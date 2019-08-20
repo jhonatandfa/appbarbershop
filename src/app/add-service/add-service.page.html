@@ -9,15 +9,25 @@
 
 <ion-content padding>
     <ion-toolbar class="bgtitle">
-        <ion-title class="title">Novo Serviço</ion-title>
+        <ion-title class="title">Escolha os Serviços</ion-title>
     </ion-toolbar>
-    <ion-item>
+    <ion-button  color="danger" size="small">Novo</ion-button>
+    <ion-item *ngFor="let s of services">
+        <ion-label position="stacked">Serviço <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" value="{{s.nome}}"></ion-input>
+        <ion-label position="stacked">Preço <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" value="{{s.preco}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        </ion-item>
+
+    <ion-button color="dark" (click)=save()>CADASTRAR</ion-button>
+    <!-- <ion-item>
         <ion-label position="stacked">Serviço <ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" name="nome" autofocus [(ngModel)]="service.nome"></ion-input>
       </ion-item>   
               <br>
-          <ion-button color="dark" (click)=addService()>CADASTRAR</ion-button>
-          <ion-button color="danger">CANCELAR</ion-button>
+          <ion-button color="danger">CANCELAR</ion-button> -->
 
 
 </ion-content>

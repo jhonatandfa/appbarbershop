@@ -1,10 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>lancamentoCliente</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-item *ngIf="agendamentos$ | async; let ag"></ion-item>
-<li *ngFor="let a of ag">{{a.key}}</li>
-<ion-content>
-
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding>
+    <ion-toolbar class="bgtitle">
+        <ion-title class="title">Agendamentos</ion-title>
+    </ion-toolbar>
+    <br>
+    <div *ngFor="let ag of agendamentos">
+        <p>Serviço: {{ag.servico}}</p>
+          <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
+          
+          <hr>
+        </div>
+       
 </ion-content>

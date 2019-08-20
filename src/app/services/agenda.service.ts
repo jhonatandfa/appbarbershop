@@ -37,6 +37,15 @@ export class AgendaService {
     )
   }
 
+  lacamento(key){
+    return this.db.list('agendamentos', ref => ref.orderByChild('idCliente').equalTo(key)).snapshotChanges()
+    .pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    )
+  }
+
   finalizar(key){
     this.db.object('agendamentos/'+key).update({status: true})
   }
