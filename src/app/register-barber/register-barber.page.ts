@@ -10,7 +10,7 @@ import {
   GeocoderRequest,
   MyLocation
 } from '@ionic-native/google-maps';
-import { Platform, ToastController } from '@ionic/angular';
+import { Platform, ToastController, AlertController } from '@ionic/angular';
 import { Barbearia } from '../entities/barbearia';
 import { BarbeariaService } from '../services/barbearia.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -48,7 +48,7 @@ export class RegisterBarberPage implements OnInit {
     private barberService: BarbeariaService,
     private AuthService: AngularFireAuth,
     public servicoService:ServicoService, 
-    private route: Router) {
+    private route: Router,private AlertCtrl: AlertController) {
   }
   async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
@@ -89,10 +89,20 @@ export class RegisterBarberPage implements OnInit {
     this.AuthService.user.subscribe(
       res=> 
       this.barberService.save(this.barbearia, res.uid).then( () => {
+        this.presentAlert();
         this.route.navigate(['/add-service', { key: res.uid }])        
       })
     )
     
+  }
+
+  async presentAlert() {
+    const alert = await this.AlertCtrl.create({
+      header: 'Barbearia cadastrada com sucesso!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
    
