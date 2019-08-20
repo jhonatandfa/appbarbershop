@@ -56,14 +56,14 @@ getInit(){
       icon: 'construct'
     },
     {
-      title: 'Configurações',
-      url: '/config',
-      icon: 'construct'
-    },
-    {
       title: 'Minha Barbearia',
       url: '/minha-barbearia',
       icon: 'cut'
+    },
+    {
+      title: 'Configurações',
+      url: '/config',
+      icon: 'construct'
     }
   ];
 
