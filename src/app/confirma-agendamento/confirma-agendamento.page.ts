@@ -21,7 +21,7 @@ export class ConfirmaAgendamentoPage implements OnInit {
     private barbeariaService: BarbeariaService,
     private route: ActivatedRoute,
     public agendamentoSerivce: AgendamentoService,
-    private AuthService: AngularFireAuth,private AlertCtrl: AlertController) {
+    private AuthService: AngularFireAuth, private AlertCtrl: AlertController) {
     this.route.queryParams.subscribe(params => {
       let getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
@@ -49,10 +49,11 @@ export class ConfirmaAgendamentoPage implements OnInit {
         this.agendamentoSerivce.save(this.agendamento)
           .then(() => {
             this.presentAlert();
-        setInterval(function(){
-          this.router.navigateByUrl('/barbearia/' + this.agendamento.idBarbearia);
-          
-        }, 3000);
+              setTimeout(() => {
+                this.router.navigateByUrl('/barbearia/' + this.agendamento.idBarbearia);
+
+              }, 3000)
+
           })
     )
   }
