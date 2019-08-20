@@ -52,7 +52,7 @@ getInit(){
       icon: 'jet'
     },
     {
-      title: 'Seus agendamentos',
+      title: 'Meus agendamentos',
       url: '/lancamento-cliente',
       icon: 'stopwatch'
     },
