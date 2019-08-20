@@ -8,7 +8,7 @@
   </ion-header>
 <ion-content padding>
     <ion-toolbar class="bgtitle">
-        <ion-title class="title">Lançamentos</ion-title>
+        <ion-title class="title">Agendamentos</ion-title>
     </ion-toolbar>
     <br>
     <ion-item >
@@ -20,7 +20,6 @@
     <div *ngFor="let ag of espera">
       <p *ngFor="let s of ag.servico">Serviço: {{s.nome}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R$ {{s.preco}}</p>
         <p> Data e Hora: {{ag.dataDoAgendamento | date: 'dd/MM/yyyy'}} {{ag.horaDoAgendamento | date: 'HH:mm' }}</p>
-        <ion-button (click)="finalizar(ag.key)" color="danger">Finalizar</ion-button>
         <hr>
       </div>
     
