@@ -35,7 +35,7 @@
     "core-js": "^2.5.4",
     "firebase": "^6.1.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-mask": "^8.0.0",
     "rxjs": "~6.5.1",
     "telefone-mask-ng2": "^1.0.7",
